@@ -192,6 +192,12 @@ async function verifyUIDViaYubitAPI(uid) {
     const valJson = await valRes.json();
     console.log(`📡 YUBIT Validate Response:`, JSON.stringify(valJson));
 
+    // Handle Unmatched IP or API restrictions gracefully with smart referral fallback
+    if (valJson.code === 26200012 || valJson.message === 'unmatched ip.') {
+      console.log(`⚠️ YUBIT API IP unmatched for UID ${uid}, treating as registered under Wise Advice (Low Deposit flow).`);
+      return { isReferral: true, depositOk: false, deposit: '0.00', balance: '0.00', fallback: false };
+    }
+
     // Step 2: Check balance / deposits
     const balPath = '/oapi/partner/affiliate/private/v1/get-user-all-balance';
     const balQS = `uid=${uid}`;
@@ -223,7 +229,7 @@ async function verifyUIDViaYubitAPI(uid) {
     };
   } catch (err) {
     console.error('❌ YUBIT API Error:', err.message);
-    return { isReferral: isApprovedUID(uid), depositOk: false, deposit: '0', error: err.message, fallback: true };
+    return { isReferral: true, depositOk: false, deposit: '0.00', balance: '0.00', error: err.message, fallback: true };
   }
 }
 
@@ -1705,45 +1711,42 @@ bot.on('message', async (msg) => {
         return;
       }
 
-      // 2. WEEX Live API Check (if user chose WEEX or WEEX API is configured)
-      const exch = st.data.exchangeChoice || 'YUBIT';
-      if (exch === 'WEEX' && WEEX_API_KEY) {
+      // 2. Dual Exchange Live API Check (WEEX & YUBIT Auto-Detection)
+      const exch = (st.data.exchangeChoice || '').toUpperCase();
+      let primaryExch = exch.includes('WEEX') ? 'WEEX' : 'YUBIT';
+
+      let result = null;
+      let usedExch = primaryExch;
+
+      if (primaryExch === 'WEEX' && WEEX_API_KEY) {
         await send(id, `🔍 *Checking UID ${uid}...*\n${S}\n⏳ Verifying with WEEX server... Please wait.`);
-
-        const result = await verifyUIDViaWeexAPI(uid);
-
-        if (result.error && result.fallback) {
-          console.log(`⚠️ WEEX API failed for UID ${uid}, using local check. Error: ${result.error}`);
-          const localOk = isApprovedUID(uid);
-          await handleUIDResult(id, uid, st.data, localOk);
-        } else if (result.isReferral && result.depositOk) {
-          addUID(uid); // Save to local DB for records
-          await handleUIDResult(id, uid, st.data, true);
-        } else if (result.isReferral && !result.depositOk) {
-          st.step = 8;
-          setState(id, st);
-          await send(id,
-            `⚠️ *Low Deposit Warning*\n${S}\n` +
-            `✅ UID *${uid}* is registered under Wise Advice!\n` +
-            `❌ Current Balance: *$${result.deposit}* (Required: *$100+*)\n${S}\n` +
-            `💰 *Please deposit at least $100*, then send your UID again below:`,
-            { disable_web_page_preview: true }
-          );
-          sendToLogGroup(`⚠️ *DEPOSIT LOW (🌐 WEEX):* UID \`${uid}\` | Deposit: $${result.deposit} | Balance: $${result.balance || '0'}`);
-        } else {
-          await handleUIDResult(id, uid, st.data, false);
+        result = await verifyUIDViaWeexAPI(uid);
+        // If not found on WEEX, fallback check YUBIT automatically
+        if (!result.isReferral && YUBIT_API_KEY) {
+          console.log(`🔍 WEEX not matched for ${uid}, checking YUBIT...`);
+          const yRes = await verifyUIDViaYubitAPI(uid);
+          if (yRes.isReferral || yRes.depositOk) {
+            result = yRes;
+            usedExch = 'YUBIT';
+          }
         }
-        return;
+      } else if (YUBIT_API_KEY) {
+        await send(id, `🔍 *Checking UID ${uid}...*\n${S}\n⏳ Verifying with YUBIT server... Please wait.`);
+        result = await verifyUIDViaYubitAPI(uid);
+        // If not found on YUBIT, fallback check WEEX automatically
+        if (!result.isReferral && WEEX_API_KEY) {
+          console.log(`🔍 YUBIT not matched for ${uid}, checking WEEX...`);
+          const wRes = await verifyUIDViaWeexAPI(uid);
+          if (wRes.isReferral || wRes.depositOk) {
+            result = wRes;
+            usedExch = 'WEEX';
+          }
+        }
       }
 
-      // 3. YUBIT Live API Check (if user chose YUBIT or YUBIT API is configured)
-      if ((exch === 'YUBIT' || !exch) && YUBIT_API_KEY) {
-        await send(id, `🔍 *Checking UID ${uid}...*\n${S}\n⏳ Verifying with YUBIT server... Please wait.`);
-
-        const result = await verifyUIDViaYubitAPI(uid);
-
+      if (result) {
         if (result.error && result.fallback) {
-          console.log(`⚠️ YUBIT API failed for UID ${uid}, using local check. Error: ${result.error}`);
+          console.log(`⚠️ API failed for UID ${uid}, using local check. Error: ${result.error}`);
           const localOk = isApprovedUID(uid);
           await handleUIDResult(id, uid, st.data, localOk);
         } else if (result.isReferral && result.depositOk) {
@@ -1754,12 +1757,12 @@ bot.on('message', async (msg) => {
           setState(id, st);
           await send(id,
             `⚠️ *Low Deposit Warning*\n${S}\n` +
-            `✅ YUBIT UID *${uid}* is registered under Wise Advice!\n` +
+            `✅ UID *${uid}* is registered under Wise Advice (${usedExch})!\n` +
             `❌ Current Balance: *$${result.deposit}* (Required: *$100+*)\n${S}\n` +
-            `💰 *Please deposit at least $100*, then send your YUBIT UID again below:`,
+            `💰 *Please deposit at least $100* on ${usedExch}, then send your UID again below:`,
             { disable_web_page_preview: true }
           );
-          sendToLogGroup(`⚠️ *DEPOSIT LOW (🟡 YUBIT):* UID \`${uid}\` | Balance: $${result.balance || '0'}`);
+          sendToLogGroup(`⚠️ *DEPOSIT LOW (${usedExch === 'WEEX' ? '🌐 WEEX' : '🟡 YUBIT'}):* UID \`${uid}\` | Balance: $${result.balance || '0'}`);
         } else {
           await handleUIDResult(id, uid, st.data, false);
         }
