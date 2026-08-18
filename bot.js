@@ -1061,189 +1061,33 @@ bot.onText(/\/?(broadcast|bc|📢 Broadcast)(?:\s+([\s\S]+))?/i, async (msg, mat
   );
 });
 
-// ─── COLORFUL TABLE IMAGE GENERATOR ────────────────────────────
-function generateUsersTableImage(users, title = 'USER DATA TABLE') {
-  const cols = [
-    { key: 'idx',         label: '#',         width: 42  },
-    { key: 'firstName',   label: 'Name',       width: 130 },
-    { key: 'q1',          label: 'Country',    width: 95  },
-    { key: 'q2',          label: 'Capital',    width: 140 },
-    { key: 'q3',          label: 'Exchange',   width: 95  },
-    { key: 'q4',          label: 'Email',      width: 190 },
-    { key: 'q5',          label: 'Telegram',   width: 125 },
-    { key: 'q6',          label: 'Mobile',     width: 130 },
-    { key: 'yubitUID',    label: 'UID',        width: 115 },
-    { key: 'status',      label: 'Status',     width: 95  },
-    { key: 'completedAt', label: 'Time',       width: 140 },
-  ];
+// ─── CLEAN MARKDOWN TEXT TABLE GENERATOR ────────────────────────
+function generateTextTable(list, title = 'USER DATABASE TABLE') {
+  const dateStr = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', hour12: false }).substring(0, 16);
+  let text = `📊 *${title}*\n━━━━━━━━━━━━━━━━━━━━\n`;
+  text += `👥 *Total Users:* \`${list.length}\`   |   🕒 \`${dateStr} IST\`\n\n`;
 
-  const PAD    = 24;       // outer padding
-  const ROW_H  = 44;
-  const HDR_H  = 54;
-  const TTL_H  = 66;       // title bar height
-  const totalW = cols.reduce((s, c) => s + c.width, 0) + (cols.length - 1); // 1px borders
-  const totalH = TTL_H + HDR_H + users.length * ROW_H + PAD;
-  const W      = totalW + PAD * 2;
-  const H      = totalH + PAD;
+  text += `\`\`\`\n`;
+  text += ` # | Name       | Exch  | UID        | Status   \n`;
+  text += `---|------------|-------|------------|----------\n`;
 
-  const canvas = createCanvas(W, H);
-  const ctx    = canvas.getContext('2d');
+  list.forEach((d, i) => {
+    const idx = String(i + 1).padEnd(2, ' ');
+    const name = (d.firstName || d.userName || 'Trader').substring(0, 10).padEnd(10, ' ');
+    const rawExch = (d.q3 || d.exchangeChoice || 'WEEX').toUpperCase();
+    const exch = (rawExch.includes('WEEX') ? 'WEEX' : 'YUBIT').padEnd(5, ' ');
+    const uid = (d.yubitUID || 'N/A').substring(0, 10).padEnd(10, ' ');
+    const st = d.status === 'approved' ? 'APPROVED ' : 'PENDING  ';
 
-  // ─ Outer Canvas Dark Background
-  ctx.fillStyle = '#090d16';
-  ctx.fillRect(0, 0, W, H);
-
-  // Subtle ambient glow
-  const bgGlow = ctx.createRadialGradient(W / 2, 0, 10, W / 2, H / 2, W);
-  bgGlow.addColorStop(0, 'rgba(79, 70, 229, 0.15)');
-  bgGlow.addColorStop(0.5, 'rgba(6, 182, 212, 0.05)');
-  bgGlow.addColorStop(1, 'rgba(9, 13, 22, 0)');
-  ctx.fillStyle = bgGlow;
-  ctx.fillRect(0, 0, W, H);
-
-  // ─ Title bar (Vibrant Gradient Header)
-  const isToday = title.toLowerCase().includes('today');
-  const grad = ctx.createLinearGradient(PAD, PAD, PAD + totalW, PAD);
-  if (isToday) {
-    grad.addColorStop(0, '#059669'); // Emerald Green
-    grad.addColorStop(0.5, '#10b981'); 
-    grad.addColorStop(1, '#06b6d4'); // Cyan
-  } else {
-    grad.addColorStop(0, '#4f46e5'); // Indigo
-    grad.addColorStop(0.5, '#7c3aed'); // Purple
-    grad.addColorStop(1, '#06b6d4'); // Cyan
-  }
-  ctx.fillStyle = grad;
-  ctx.beginPath();
-  ctx.roundRect(PAD, PAD, totalW, TTL_H - 10, [10, 10, 0, 0]);
-  ctx.fill();
-
-  // Title text
-  const dateStr = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', hour12: false }).substring(0, 17);
-  ctx.fillStyle = '#ffffff';
-  ctx.font = 'bold 18px CustomRoboto, sans-serif';
-  ctx.fillText(title, PAD + 18, PAD + 28);
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
-  ctx.font = '13px CustomRoboto, sans-serif';
-  ctx.fillText(`Total Users: ${users.length}   |   ${dateStr} IST`, PAD + 18, PAD + 48);
-
-  // ─ Header row (Cyber Dark Fill with Accent Line)
-  let x = PAD, y = PAD + TTL_H - 10;
-  const hdrGrad = ctx.createLinearGradient(0, y, 0, y + HDR_H);
-  hdrGrad.addColorStop(0, '#131b2e');
-  hdrGrad.addColorStop(1, '#0f172a');
-  cols.forEach(col => {
-    ctx.fillStyle = hdrGrad;
-    ctx.fillRect(x, y, col.width, HDR_H);
-    ctx.fillStyle = '#38bdf8'; // Cyan Header Text
-    ctx.font = 'bold 12px CustomRoboto, sans-serif';
-    ctx.fillText(col.label.toUpperCase(), x + 10, y + HDR_H / 2 + 4, col.width - 14);
-    // Divider
-    ctx.fillStyle = '#1e293b';
-    ctx.fillRect(x + col.width, y, 1, HDR_H);
-    x += col.width + 1;
-  });
-  // Glowing Header Accent Line
-  ctx.fillStyle = isToday ? '#10b981' : '#818cf8';
-  ctx.fillRect(PAD, y + HDR_H, totalW, 2);
-
-  // ─ Data rows
-  const EVEN_BG = '#0f172a';
-  const ODD_BG  = '#0b1120';
-  users.forEach((d, i) => {
-    y += (i === 0 ? HDR_H + 2 : ROW_H);
-    x  = PAD;
-    const bg = i % 2 === 0 ? EVEN_BG : ODD_BG;
-    ctx.fillStyle = bg;
-    ctx.fillRect(PAD, y, totalW, ROW_H);
-
-    // Row status highlight tint
-    if (d.status === 'approved') {
-      ctx.fillStyle = 'rgba(16, 185, 129, 0.08)';
-      ctx.fillRect(PAD, y, totalW, ROW_H);
-    } else if (d.status === 'not_found') {
-      ctx.fillStyle = 'rgba(244, 63, 94, 0.06)';
-      ctx.fillRect(PAD, y, totalW, ROW_H);
-    }
-
-    const st   = d.status === 'approved' ? 'APPROVED' : d.status === 'not_found' ? 'NOT FOUND' : 'PENDING';
-    const stClr= d.status === 'approved' ? '#10b981' : d.status === 'not_found' ? '#f43f5e' : '#f59e0b';
-    
-    // Smart fallbacks so table image NEVER shows empty '-' dashes for leads
-    const nameStr    = d.firstName || d.userName || (d.chatId ? `User (${d.chatId})` : 'Trader');
-    const countryStr = d.q1 || 'India';
-    const capitalStr = d.q2 || '$100 to $1000';
-    const exchStr    = d.q3 || d.exchangeChoice || 'WEEX';
-    const emailStr   = d.q4 || (d.userName ? `${d.userName}@tg.com` : 'N/A');
-    const tgStr      = d.q5 || (d.userName ? `@${d.userName}` : 'N/A');
-    const mobStr     = d.q6 || 'N/A';
-    const uidStr     = d.yubitUID || 'N/A';
-
-    // Format time
-    const timeStr = d.completedAt
-      ? new Date(d.completedAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', hour12: false,
-          day:'2-digit', month:'2-digit', year:'2-digit', hour:'2-digit', minute:'2-digit' })
-      : '-';
-
-    const vals = [
-      String(i + 1), nameStr, countryStr, capitalStr,
-      exchStr, emailStr, tgStr, mobStr, uidStr, st, timeStr
-    ];
-
-    cols.forEach((col, ci) => {
-      const isStatus = col.key === 'status';
-      const isUID    = col.key === 'yubitUID';
-      const isNum    = col.key === 'idx';
-
-      if (isStatus) {
-        // Rounded Glowing Badge
-        const bw = 78, bh = 24, bx = x + (col.width - bw) / 2, by = y + (ROW_H - bh) / 2;
-        ctx.fillStyle = stClr + '22'; // 13% opacity fill
-        ctx.beginPath();
-        ctx.roundRect(bx, by, bw, bh, 6);
-        ctx.fill();
-        ctx.strokeStyle = stClr + '66'; // border outline
-        ctx.lineWidth = 1;
-        ctx.stroke();
-        ctx.fillStyle = stClr;
-        ctx.font      = 'bold 10px CustomRoboto, sans-serif';
-        ctx.textAlign = 'center';
-        ctx.fillText(st, bx + bw / 2, by + 16);
-        ctx.textAlign = 'left';
-      } else {
-        if (isUID) {
-          ctx.fillStyle = '#fbbf24'; // Gold highlight for UID
-          ctx.font      = 'bold 12px CustomRoboto, sans-serif';
-        } else if (isNum) {
-          ctx.fillStyle = '#64748b'; // Muted grey for index
-          ctx.font      = '12px CustomRoboto, sans-serif';
-        } else {
-          ctx.fillStyle = '#f8fafc'; // Crisp white text
-          ctx.font      = '12px CustomRoboto, sans-serif';
-        }
-        ctx.fillText(vals[ci], x + 10, y + ROW_H / 2 + 4, col.width - 14);
-      }
-
-      // Column divider
-      ctx.fillStyle = '#1e293b';
-      ctx.fillRect(x + col.width, y, 1, ROW_H);
-      x += col.width + 1;
-    });
-
-    // Row bottom border
-    ctx.fillStyle = '#1e293b';
-    ctx.fillRect(PAD, y + ROW_H, totalW, 1);
+    text += `${idx} | ${name} | ${exch} | ${uid} | ${st}\n`;
   });
 
-  // Outer Glowing Border
-  ctx.strokeStyle = '#334155';
-  ctx.lineWidth   = 1;
-  ctx.strokeRect(PAD, PAD, totalW, H - PAD * 2);
-
-  return canvas;
+  text += `\`\`\`\n`;
+  text += `📌 _Use /search <UID> or click on a lead card to view full user details._`;
+  return text;
 }
 
-// /today — Today's Users Canvas Table Image
+// /today — Today's Users Clean Text Table
 bot.onText(/\/?(today|todayusers|📅 Today Users)/i, async (msg) => {
   const chatId = msg.chat.id;
   const isLog  = logGroupId && String(chatId) === String(logGroupId);
@@ -1260,26 +1104,11 @@ bot.onText(/\/?(today|todayusers|📅 Today Users)/i, async (msg) => {
     return send(chatId, `📅 *Today's User Registrations (0)*\n━━━━━━━━━━━━━━━━━━━━\nNo new users registered today (${todayStr}) yet.`);
   }
 
-  try {
-    const canvas  = generateUsersTableImage(list, "TODAY'S USER REGISTRATIONS");
-    const tmpFile = path.join(__dirname, `today_users_${Date.now()}.png`);
-    const out     = fs.createWriteStream(tmpFile);
-    const stream  = canvas.createPNGStream();
-    await new Promise((res, rej) => { stream.pipe(out); out.on('finish', res); out.on('error', rej); });
-
-    await bot.sendPhoto(chatId, tmpFile, {
-      caption: `📅 *Today's User Registrations* — ${list.length} Users (${todayStr})`,
-      parse_mode: 'Markdown',
-      protect_content: true
-    });
-    fs.unlinkSync(tmpFile);
-  } catch(e) {
-    console.error('❌ /today image error:', e.message);
-    await send(chatId, `❌ Today users table generate nahi ho saki: ${e.message}`);
-  }
+  const tableText = generateTextTable(list, `TODAY'S REGISTRATIONS (${todayStr})`);
+  send(chatId, tableText);
 });
 
-// /users — Colorful Image Table (canvas)
+// /users — All Users Clean Text Table
 bot.onText(/\/?(users|📊 All Users)/i, async (msg) => {
   const chatId = msg.chat.id;
   const isLog  = logGroupId && String(chatId) === String(logGroupId);
@@ -1289,23 +1118,8 @@ bot.onText(/\/?(users|📊 All Users)/i, async (msg) => {
   const list = Object.values(u);
   if (!list.length) return send(chatId, `📋 No users registered yet.`);
 
-  try {
-    const canvas  = generateUsersTableImage(list);
-    const tmpFile = path.join(__dirname, `users_table_${Date.now()}.png`);
-    const out     = fs.createWriteStream(tmpFile);
-    const stream  = canvas.createPNGStream();
-    await new Promise((res, rej) => { stream.pipe(out); out.on('finish', res); out.on('error', rej); });
-
-    await bot.sendPhoto(chatId, tmpFile, {
-      caption: `📊 *User Data Table* — ${list.length} Users`,
-      parse_mode: 'Markdown',
-      protect_content: true  // 🚫 No copy / forward
-    });
-    fs.unlinkSync(tmpFile);
-  } catch(e) {
-    console.error('❌ /users image error:', e.message);
-    await send(chatId, `❌ Table generate nahi ho saki: ${e.message}`);
-  }
+  const tableText = generateTextTable(list, `ALL REGISTERED USERS TABLE`);
+  send(chatId, tableText);
 });
 
 // /export — Export all users as CSV file
