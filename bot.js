@@ -3,14 +3,21 @@ const TelegramBot = require('node-telegram-bot-api');
 const path = require('path');
 const fs   = require('fs');
 const crypto = require('crypto');
-const { createCanvas, registerFont } = require('canvas');
+let createCanvas, registerFont;
+try {
+  const canvasPkg = require('canvas');
+  createCanvas = canvasPkg.createCanvas;
+  registerFont = canvasPkg.registerFont;
+} catch (e) {
+  console.log('⚠️ Canvas module fallback active:', e.message);
+}
 
 // Register Roboto font checking both root directory and fonts/ subfolder
 const fontPath1 = path.join(__dirname, 'fonts', 'Roboto.ttf');
 const fontPath2 = path.join(__dirname, 'Roboto.ttf');
 const fontPath  = fs.existsSync(fontPath1) ? fontPath1 : (fs.existsSync(fontPath2) ? fontPath2 : null);
 
-if (fontPath) {
+if (fontPath && registerFont) {
   try {
     registerFont(fontPath, { family: 'CustomRoboto' });
     console.log('✅ CustomRoboto font registered for Canvas from:', fontPath);
@@ -18,7 +25,7 @@ if (fontPath) {
     console.error('⚠️ Font registration error:', e.message);
   }
 } else {
-  console.log('⚠️ Roboto.ttf font file not found in root or fonts/ folder');
+  console.log('⚠️ Roboto.ttf font file not found or registerFont not available');
 }
 
 const token        = process.env.TELEGRAM_BOT_TOKEN;
@@ -1214,8 +1221,6 @@ function generateUsersTableImage(users, title = 'USER DATA TABLE') {
           ctx.fillStyle = '#f8fafc'; // Crisp white text
           ctx.font      = '12px CustomRoboto, sans-serif';
         }
-        ctx.fillText(vals[ci], x + 10, y + ROW_H / 2 + 4, col.width - 14);
-      }
         ctx.fillText(vals[ci], x + 10, y + ROW_H / 2 + 4, col.width - 14);
       }
 
