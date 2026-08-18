@@ -1,0 +1,971 @@
+﻿≡ƒö½ STEP 1: setWebhook to KILL other polling...
+   { ok: true, result: true, description: 'Webhook was set' }
+
+≡ƒö½ STEP 2: deleteWebhook (drop pending)...
+   { ok: true, result: true, description: 'Webhook was deleted' }
+
+≡ƒÜÇ STEP 3: Starting OUR bot INSTANTLY...
+Γ£à OUR BOT IS RUNNING. Test /start on Telegram NOW!
+≡ƒôó If other bot reconnects ΓÇö 409 errors will appear below. Keep sending /start to test.
+ΓÜá∩╕Å  [1] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [2] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [3] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [4] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [5] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [6] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [7] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [8] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [9] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [10] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [11] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [12] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [13] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [14] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [15] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [16] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [17] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [18] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [19] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [20] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [21] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [22] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [23] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [24] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [25] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [26] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [27] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [28] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [29] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [30] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [31] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [32] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [33] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒô⌐ /start from DOVELOPER AKKI ≡ƒûÑ∩╕Å (6556791395)
+node : (node:20380) [node-telegram-bot-api] DeprecationWarning: In the future, 
+content-type of files you send will default to "application/octet-stream". See 
+https://github.com/yagop/node-telegram-bot-api/blob/master/doc/usage.md#sending
+-files for more information on how sending files has been improved and on how 
+to disable this deprecation message altogether.
+At line:1 char:5
++ & { node bot_launcher.js 2>&1 | Out-File -FilePath launcher.log -Enco ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:20380) [n...age altogether. 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ΓÜá∩╕Å  [34] Polling error: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+ΓÜá∩╕Å  [35] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [36] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [37] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [38] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [39] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [40] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [41] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [42] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [43] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [44] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [45] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [46] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [47] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [48] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [49] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [50] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [51] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [52] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [53] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+≡ƒô⌐ /start from DOVELOPER AKKI ≡ƒûÑ∩╕Å (6556791395)
+≡ƒô⌐ /start from DOVELOPER AKKI ≡ƒûÑ∩╕Å (6556791395)
+≡ƒô⌐ /start from DOVELOPER AKKI ≡ƒûÑ∩╕Å (6556791395)
+≡ƒô⌐ /start from DOVELOPER AKKI ≡ƒûÑ∩╕Å (6556791395)
+≡ƒô⌐ /start from DOVELOPER AKKI ≡ƒûÑ∩╕Å (6556791395)
+ΓÜá∩╕Å  [54] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [55] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [56] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [57] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [58] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [59] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [60] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [61] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [62] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [63] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [64] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [65] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [66] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [67] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [68] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [69] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [70] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [71] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [72] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [73] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [74] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [75] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [76] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [77] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [78] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [79] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [80] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [81] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [82] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [83] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [84] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [85] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [86] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [87] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [88] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+≡ƒô⌐ /start from DOVELOPER AKKI ≡ƒûÑ∩╕Å (6556791395)
+ΓÜá∩╕Å  [89] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [90] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [91] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [92] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+≡ƒô⌐ /start from DOVELOPER AKKI ≡ƒûÑ∩╕Å (6556791395)
+ΓÜá∩╕Å  [93] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [94] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [95] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [96] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [97] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [98] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [99] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [100] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [101] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [102] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [103] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [104] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [105] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [106] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [107] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [108] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [109] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [110] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [111] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [112] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [113] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [114] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [115] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [116] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [117] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [118] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [119] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [120] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [121] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [122] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [123] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [124] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [125] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [126] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [127] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [128] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [129] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [130] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [131] Polling error: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [132] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [133] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [134] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [135] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [136] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [137] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [138] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [139] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [140] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [141] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [142] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [143] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [144] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [145] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [146] Polling error: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [147] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [148] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [149] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+≡ƒô⌐ /start from DOVELOPER AKKI ≡ƒûÑ∩╕Å (6556791395)
+≡ƒô⌐ /start from DOVELOPER AKKI ≡ƒûÑ∩╕Å (6556791395)
+ΓÜá∩╕Å  [150] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [151] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [152] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [153] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [154] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [155] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [156] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [157] Polling error: ETELEGRAM: 409 Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to d
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [158] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [159] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [160] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [161] Polling error: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [162] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [163] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [164] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [165] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [166] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [167] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [168] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [169] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [170] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [171] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [172] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [173] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [174] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [175] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [176] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [177] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [178] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [179] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [180] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [181] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [182] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [183] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [184] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [185] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [186] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [187] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [188] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [189] Polling error: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [190] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [191] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [192] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [193] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [194] Polling error: ETELEGRAM: 409 Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to d
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [195] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [196] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [197] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [198] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [199] Polling error: ETELEGRAM: 409 Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to d
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [200] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [201] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [202] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [203] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [204] Polling error: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [205] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [206] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [207] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [208] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [209] Polling error: ETELEGRAM: 409 Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to d
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [210] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [211] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [212] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [213] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [214] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [215] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [216] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [217] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [218] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [219] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [220] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [221] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [222] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [223] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [224] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [225] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [226] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+≡ƒô⌐ /start from DOVELOPER AKKI ≡ƒûÑ∩╕Å (6556791395)
+≡ƒô⌐ /start from DOVELOPER AKKI ≡ƒûÑ∩╕Å (6556791395)
+≡ƒô⌐ /start from DOVELOPER AKKI ≡ƒûÑ∩╕Å (6556791395)
+≡ƒô⌐ /start from DOVELOPER AKKI ≡ƒûÑ∩╕Å (6556791395)
+ΓÜá∩╕Å  [227] Polling error: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [228] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [229] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [230] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [231] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [232] Polling error: ETELEGRAM: 409 Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to d
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [233] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [234] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [235] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [236] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [237] Polling error: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [238] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [239] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [240] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [241] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [242] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [243] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [244] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [245] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [246] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [247] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [248] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [249] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [250] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [251] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [252] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [253] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [254] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [255] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [256] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [257] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [258] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [259] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [260] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [261] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [262] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [263] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [264] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [265] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [266] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [267] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [268] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [269] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [270] Polling error: ETELEGRAM: 409 Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to d
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [271] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [272] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [273] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [274] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [275] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [276] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [277] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [278] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [279] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [280] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [281] Polling error: ETELEGRAM: 409 Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to d
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [282] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [283] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [284] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [285] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [286] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [287] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [288] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [289] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [290] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [291] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [292] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [293] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [294] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [295] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [296] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [297] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [298] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [299] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [300] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [301] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [302] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [303] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [304] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [305] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [306] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [307] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [308] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [309] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [310] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [311] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [312] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [313] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [314] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [315] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [316] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [317] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [318] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [319] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [320] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [321] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [322] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [323] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [324] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [325] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [326] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [327] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [328] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [329] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [330] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [331] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [332] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [333] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [334] Polling error: ETELEGRAM: 409 Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to d
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [335] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [336] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [337] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [338] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [339] Polling error: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [340] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [341] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [342] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [343] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [344] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [345] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [346] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [347] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [348] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [349] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [350] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [351] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [352] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [353] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [354] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [355] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [356] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [357] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [358] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [359] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [360] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [361] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [362] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [363] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [364] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [365] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [366] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [367] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [368] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [369] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [370] Polling error: ETELEGRAM: 409 Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to d
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [371] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [372] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [373] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [374] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [375] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [376] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [377] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [378] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [379] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [380] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [381] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [382] Polling error: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [383] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [384] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [385] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [386] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [387] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [388] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [389] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [390] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [391] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [392] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [393] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [394] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [395] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [396] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [397] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [398] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [399] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [400] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [401] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [402] Polling error: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [403] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [404] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [405] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [406] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [407] Polling error: ETELEGRAM: 409 Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to d
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [408] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [409] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [410] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [411] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [412] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [413] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [414] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [415] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [416] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [417] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [418] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [419] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [420] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [421] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [422] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [423] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [424] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [425] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [426] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [427] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [428] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [429] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [430] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [431] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [432] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [433] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [434] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [435] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [436] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [437] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [438] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+≡ƒô⌐ /start from DOVELOPER AKKI ≡ƒûÑ∩╕Å (6556791395)
+ΓÜá∩╕Å  [439] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [440] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [441] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [442] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [443] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [444] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [445] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [446] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [447] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [448] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [449] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [450] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [451] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [452] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [453] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [454] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [455] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [456] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [457] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [458] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [459] Polling error: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [460] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [461] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [462] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [463] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [464] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [465] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [466] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [467] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [468] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [469] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [470] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [471] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [472] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [473] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [474] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+ΓÜá∩╕Å  [475] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [476] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [477] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [478] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [479] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [480] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [481] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [482] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [483] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [484] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [485] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [486] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [487] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [488] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [489] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [490] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [491] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.
+ΓÜá∩╕Å  [492] Polling error: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; make sure that only one bot instanc
+≡ƒÆÇ Too many conflicts. Other bot is too fast.

@@ -1,0 +1,1136 @@
+﻿≡ƒñû Bot is starting...
+Γ£à Bot started! Send /start on Telegram.
+node : Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates 
+request; make sure that only one bot instance is running
+At line:1 char:5
++ & { node bot.js 2>&1 | Out-File -FilePath __live.log -Encoding utf8 } ...
++     ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Γ¥î Polling: ET...ance is running 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+(node:8928) [node-telegram-bot-api] DeprecationWarning: In the future, 
+content-type of files you send will default to "application/octet-stream". See 
+https://github.com/yagop/node-telegram-bot-api/blob/master/doc/usage.md#sending
+-files for more information on how sending files has been improved and on how 
+to disable this deprecation message altogether.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: can't use getUpdates method while 
+webhook is active; use deleteWebhook to delete the webhook fi
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: can't use getUpdates method while 
+webhook is active; use deleteWebhook to delete the webhook fi
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: can't use getUpdates method while 
+webhook is active; use deleteWebhook to delete the webhook fi
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: can't use getUpdates method while 
+webhook is active; use deleteWebhook to delete the webhook fi
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: can't use getUpdates method while 
+webhook is active; use deleteWebhook to delete the webhook fi
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: can't use getUpdates method while 
+webhook is active; use deleteWebhook to delete the webhook fi
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: can't use getUpdates method while 
+webhook is active; use deleteWebhook to delete the webhook fi
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: can't use getUpdates method while 
+webhook is active; use deleteWebhook to delete the webhook fi
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: can't use getUpdates method while 
+webhook is active; use deleteWebhook to delete the webhook fi
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: can't use getUpdates method while 
+webhook is active; use deleteWebhook to delete the webhook fi
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: can't use getUpdates method while 
+webhook is active; use deleteWebhook to delete the webhook fi
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: can't use getUpdates method while 
+webhook is active; use deleteWebhook to delete the webhook fi
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: can't use getUpdates method while 
+webhook is active; use deleteWebhook to delete the webhook fi
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by setWebhook request
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+Γ¥î Polling: ETELEGRAM: 409 Conflict: terminated by other getUpdates request; 
+make sure that only one bot instance is running
+≡ƒæï Stop...
