@@ -5,15 +5,20 @@ const fs   = require('fs');
 const crypto = require('crypto');
 const { createCanvas, registerFont } = require('canvas');
 
-// Register Roboto font for 100% Linux Railway container compatibility
-const fontPath = path.join(__dirname, 'fonts', 'Roboto.ttf');
-if (fs.existsSync(fontPath)) {
+// Register Roboto font checking both root directory and fonts/ subfolder
+const fontPath1 = path.join(__dirname, 'fonts', 'Roboto.ttf');
+const fontPath2 = path.join(__dirname, 'Roboto.ttf');
+const fontPath  = fs.existsSync(fontPath1) ? fontPath1 : (fs.existsSync(fontPath2) ? fontPath2 : null);
+
+if (fontPath) {
   try {
     registerFont(fontPath, { family: 'CustomRoboto' });
-    console.log('✅ CustomRoboto font registered for Canvas!');
+    console.log('✅ CustomRoboto font registered for Canvas from:', fontPath);
   } catch (e) {
     console.error('⚠️ Font registration error:', e.message);
   }
+} else {
+  console.log('⚠️ Roboto.ttf font file not found in root or fonts/ folder');
 }
 
 const token        = process.env.TELEGRAM_BOT_TOKEN;
