@@ -7,8 +7,10 @@
     "start": "node bot.js",
     "dev": "node bot.js"
   },
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
-    "canvas": "^2.11.2",
     "dotenv": "^16.4.5",
     "node-telegram-bot-api": "^0.66.0"
   }
