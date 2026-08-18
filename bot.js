@@ -3,7 +3,18 @@ const TelegramBot = require('node-telegram-bot-api');
 const path = require('path');
 const fs   = require('fs');
 const crypto = require('crypto');
-const { createCanvas } = require('canvas');
+const { createCanvas, registerFont } = require('canvas');
+
+// Register Roboto font for 100% Linux Railway container compatibility
+const fontPath = path.join(__dirname, 'fonts', 'Roboto.ttf');
+if (fs.existsSync(fontPath)) {
+  try {
+    registerFont(fontPath, { family: 'CustomRoboto' });
+    console.log('✅ CustomRoboto font registered for Canvas!');
+  } catch (e) {
+    console.error('⚠️ Font registration error:', e.message);
+  }
+}
 
 const token        = process.env.TELEGRAM_BOT_TOKEN;
 const ADMIN_ID     = process.env.ADMIN_CHAT_ID; // Admin ka Telegram Chat ID
@@ -241,6 +252,27 @@ bot.setChatMenuButton({
   .catch(e => console.error('⚠️ Menu Button Set Error:', e.message));
 
 console.log('🤖 Bot v6.5 starting... (VIP Member Left Alert Active)');
+
+// Auto-detect and post Public Server IP to Admin Log Group on boot
+fetch('https://api.ipify.org?format=json')
+  .then(r => r.json())
+  .then(d => {
+    console.log(`🌐 SERVER PUBLIC IP: ${d.ip}`);
+    sendToLogGroup(`🌐 *SERVER PUBLIC IP:* \`${d.ip}\`\n\n📌 Send this IP to Yubit Team (@YUBIT_BEN / @YUBIT_CS03) to whitelist Yubit API!`);
+  })
+  .catch(e => console.error('⚠️ Could not fetch public IP:', e.message));
+
+// /ip - Instant command to check server public IP
+bot.onText(/\/ip/, async (msg) => {
+  const chatId = msg.chat.id;
+  try {
+    const res = await fetch('https://api.ipify.org?format=json');
+    const data = await res.json();
+    send(chatId, `🌐 *SERVER PUBLIC IP:* \`${data.ip}\`\n\n📌 Send this IP to Yubit Team (@YUBIT_BEN / @YUBIT_CS03) to whitelist Yubit API!`);
+  } catch (e) {
+    send(chatId, `⚠️ Error fetching IP: ${e.message}`);
+  }
+});
 
 // ─── 5. VIP MEMBER CHURN & LEFT MONITOR ────────────────────────
 bot.on('chat_member', async (update) => {
@@ -1077,10 +1109,10 @@ function generateUsersTableImage(users, title = 'USER DATA TABLE') {
   // Title text
   const dateStr = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', hour12: false }).substring(0, 17);
   ctx.fillStyle = '#ffffff';
-  ctx.font = 'bold 18px Arial';
+  ctx.font = 'bold 18px CustomRoboto, sans-serif';
   ctx.fillText(title, PAD + 18, PAD + 28);
   ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
-  ctx.font = '13px Arial';
+  ctx.font = '13px CustomRoboto, sans-serif';
   ctx.fillText(`Total Users: ${users.length}   |   ${dateStr} IST`, PAD + 18, PAD + 48);
 
   // ─ Header row (Cyber Dark Fill with Accent Line)
@@ -1092,7 +1124,7 @@ function generateUsersTableImage(users, title = 'USER DATA TABLE') {
     ctx.fillStyle = hdrGrad;
     ctx.fillRect(x, y, col.width, HDR_H);
     ctx.fillStyle = '#38bdf8'; // Cyan Header Text
-    ctx.font = 'bold 12px Arial';
+    ctx.font = 'bold 12px CustomRoboto, sans-serif';
     ctx.fillText(col.label.toUpperCase(), x + 10, y + HDR_H / 2 + 4, col.width - 14);
     // Divider
     ctx.fillStyle = '#1e293b';
@@ -1162,21 +1194,23 @@ function generateUsersTableImage(users, title = 'USER DATA TABLE') {
         ctx.lineWidth = 1;
         ctx.stroke();
         ctx.fillStyle = stClr;
-        ctx.font      = 'bold 10px Arial';
+        ctx.font      = 'bold 10px CustomRoboto, sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText(st, bx + bw / 2, by + 16);
         ctx.textAlign = 'left';
       } else {
         if (isUID) {
           ctx.fillStyle = '#fbbf24'; // Gold highlight for UID
-          ctx.font      = 'bold 12px Arial';
+          ctx.font      = 'bold 12px CustomRoboto, sans-serif';
         } else if (isNum) {
           ctx.fillStyle = '#64748b'; // Muted grey for index
-          ctx.font      = '12px Arial';
+          ctx.font      = '12px CustomRoboto, sans-serif';
         } else {
           ctx.fillStyle = '#f8fafc'; // Crisp white text
-          ctx.font      = '12px Arial';
+          ctx.font      = '12px CustomRoboto, sans-serif';
         }
+        ctx.fillText(vals[ci], x + 10, y + ROW_H / 2 + 4, col.width - 14);
+      }
         ctx.fillText(vals[ci], x + 10, y + ROW_H / 2 + 4, col.width - 14);
       }
 
