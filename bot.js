@@ -156,6 +156,25 @@ async function verifyUIDViaWeexAPI(uid) {
 const YUBIT_API_KEY    = process.env.YUBIT_API_KEY    || '';
 const YUBIT_SECRET_KEY = process.env.YUBIT_SECRET_KEY || '';
 const YUBIT_API_BASE   = 'https://openapi.yubit.com';
+// Cloudflare Worker Proxy (set in Railway Variables as YUBIT_PROXY_URL)
+// Format: https://yubit-proxy.YOUR_NAME.workers.dev
+const YUBIT_PROXY_URL    = process.env.YUBIT_PROXY_URL    || '';
+const YUBIT_PROXY_SECRET = process.env.YUBIT_PROXY_SECRET || '';
+
+// ─── YUBIT API FETCH (via Cloudflare Worker or Direct) ───────
+async function yubitFetch(path, queryString, headers) {
+  // If Cloudflare Worker proxy is configured, use it (fixed IP!)
+  if (YUBIT_PROXY_URL && YUBIT_PROXY_SECRET) {
+    const proxyUrl = `${YUBIT_PROXY_URL}?path=${encodeURIComponent(path)}&qs=${encodeURIComponent(queryString)}`;
+    const proxyHeaders = Object.assign({}, headers, { 'X-Proxy-Secret': YUBIT_PROXY_SECRET });
+    console.log(`🌐 YUBIT via Cloudflare Worker Proxy...`);
+    return fetch(proxyUrl, { method: 'GET', headers: proxyHeaders });
+  }
+  // Fallback: direct call (IP may mismatch on Railway)
+  const directUrl = `${YUBIT_API_BASE}${path}${queryString ? '?' + queryString : ''}`;
+  console.log(`🌐 YUBIT Direct API call...`);
+  return fetch(directUrl, { method: 'GET', headers });
+}
 
 // ─── YUBIT API SIGNATURE HELPER ──────────────────────────────
 function generateYubitSignature(method, path, timestamp, apiKey, recvWindow, payload = '') {
@@ -195,19 +214,26 @@ async function verifyUIDViaYubitAPI(uid) {
     const valUrl = `${YUBIT_API_BASE}${valPath}?${valQS}`;
 
     console.log(`🔍 YUBIT API: Validating UID ${uid}...`);
-    const valRes = await fetch(valUrl, { method: 'GET', headers: valHeaders });
+    const valRes = await yubitFetch(valPath, valQS, valHeaders);
     const valJson = await valRes.json();
     console.log(`📡 YUBIT Validate Response:`, JSON.stringify(valJson));
 
-    // ─── IP Mismatch Fallback (code 26200012) ────────────────────
+    // ─── IP Mismatch (code 26200012) ─────────────────────────────
     if (valJson.code === 26200012 || valJson.message === 'unmatched ip.') {
-      console.log(`⚠️ YUBIT IP mismatch for UID ${uid} — fallback: Low Deposit Warning`);
-      return { isReferral: true, depositOk: false, deposit: '0.00', balance: '0.00', ipFallback: true };
+      console.log(`⚠️ YUBIT IP mismatch for UID ${uid} — using local DB fallback`);
+      // Alert admin with new IP to whitelist (only if not using proxy)
+      if (!YUBIT_PROXY_URL) {
+        fetch('https://api.ipify.org?format=json')
+          .then(r => r.json())
+          .then(d => sendToLogGroup(
+            `🚨 *YUBIT IP MISMATCH!*\n━━━━━━━━━━━━━━━━━━━━\n🌐 Server IP: \`${d.ip}\`\n📌 Whitelist karo Yubit Team (@YUBIT_CS03) se!\n⚠️ Tab tak Local DB se kaam chalega.`
+          )).catch(() => {});
+      }
+      const localOk = isApprovedUID(uid);
+      return { isReferral: localOk, depositOk: localOk, deposit: localOk ? '100.00' : '0.00', balance: localOk ? '100.00' : '0.00', ipFallback: true };
     }
 
     // ─── NOT a referral under Wise Advice ────────────────────────
-    // valJson.data === false means UID exists on Yubit but NOT registered under our invite code
-    // Any other non-zero code also means failure
     if (valJson.data === false || valJson.data === 'false') {
       console.log(`❌ YUBIT: UID ${uid} is NOT under Wise Advice referral`);
       return { isReferral: false, depositOk: false, deposit: '0.00', balance: '0.00', error: null };
@@ -224,12 +250,11 @@ async function verifyUIDViaYubitAPI(uid) {
 
     const balPath = '/oapi/partner/affiliate/private/v1/get-user-all-balance';
     const balQS = `uid=${uid}`;
-    const balTimestamp = String(Date.now() + timeOffset); // fresh timestamp for 2nd call
+    const balTimestamp = String(Date.now() + timeOffset);
     const balHeaders = getYubitHeaders('GET', balPath, balTimestamp, YUBIT_API_KEY, recvWindow, balQS);
-    const balUrl = `${YUBIT_API_BASE}${balPath}?${balQS}`;
 
     console.log(`💰 YUBIT API: Checking balance for UID ${uid}...`);
-    const balRes = await fetch(balUrl, { method: 'GET', headers: balHeaders });
+    const balRes = await yubitFetch(balPath, balQS, balHeaders);
     const balJson = await balRes.json();
     console.log(`📡 YUBIT Balance Response:`, JSON.stringify(balJson));
 
