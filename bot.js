@@ -487,15 +487,26 @@ setInterval(() => {
 }, 30000);
 
 
-// Send 1-Line New Lead Notification to Log Group with View Full Details button
-async function sendLeadToLogGroup(data, uid, status, chatId) {
+// ─── 1-LINE MOBILE-PERFECT LEAD NOTIFICATION ENGINE ─────────
+async function sendLeadToLogGroup(data, uid, status, chatId, extraInfo = '') {
   if (!logGroupId) return;
   const name     = data.firstName || 'User';
   const rawExch  = (data.exchangeChoice || data.q3 || 'WEEX').toUpperCase();
-  const exchBadge= rawExch.includes('WEEX') ? '🌐 WEEX' : '🟡 YUBIT';
+  const exchBadge= rawExch.includes('WEEX') ? '🟢 WEEX' : '🟡 YUBIT';
   const tgHandle = data.q5 || (data.userName ? `@${data.userName}` : '@User');
 
-  const oneLineText = `⚡ *NEW LEAD:* *${escMd(name)}* (${escMd(tgHandle)}) | *${exchBadge}* | UID: \`${uid || 'N/A'}\``;
+  let oneLineText = '';
+  if (status === 'approved') {
+    const balStr = extraInfo ? ` | $${parseFloat(extraInfo).toFixed(2)}` : '';
+    oneLineText = `✅ *VIP APPROVED:* *${escMd(name)}* (${escMd(tgHandle)}) | *${exchBadge}* | UID: \`${uid || 'N/A'}\`${balStr}`;
+  } else if (status === 'deposit_low') {
+    const balStr = extraInfo ? ` | $${parseFloat(extraInfo).toFixed(2)}` : ' | $0.00';
+    oneLineText = `⚠️ *DEPOSIT LOW:* *${escMd(name)}* (${escMd(tgHandle)}) | *${exchBadge}* | UID: \`${uid || 'N/A'}\`${balStr}`;
+  } else if (status === 'not_found') {
+    oneLineText = `❌ *NOT REGISTERED:* *${escMd(name)}* (${escMd(tgHandle)}) | *${exchBadge}* | UID: \`${uid || 'N/A'}\``;
+  } else {
+    oneLineText = `⚡ *NEW LEAD:* *${escMd(name)}* (${escMd(tgHandle)}) | *${exchBadge}* | UID: \`${uid || 'N/A'}\``;
+  }
 
   const opts = {
     parse_mode: 'Markdown',
@@ -508,30 +519,6 @@ async function sendLeadToLogGroup(data, uid, status, chatId) {
   };
 
   bot.sendMessage(logGroupId, oneLineText, opts).catch(e => console.error('❌ Lead card send error:', e.message));
-}
-
-// Send updated colorful table image to log group
-async function sendUpdatedTableImageToLogGroup() {
-  if (!logGroupId) return;
-  try {
-    const u     = loadUsers();
-    const list  = Object.values(u);
-    if (!list.length) return;
-    const canvas  = generateUsersTableImage(list);
-    const tmpFile = path.join(__dirname, `users_table_auto_${Date.now()}.png`);
-    const out     = fs.createWriteStream(tmpFile);
-    const stream  = canvas.createPNGStream();
-    await new Promise((res, rej) => { stream.pipe(out); out.on('finish', res); out.on('error', rej); });
-
-    await bot.sendPhoto(logGroupId, tmpFile, {
-      caption: `📊 *UPDATED USER DATABASE TABLE* — Total: ${list.length} Users`,
-      parse_mode: 'Markdown',
-      protect_content: true
-    });
-    fs.unlinkSync(tmpFile);
-  } catch (e) {
-    console.error('❌ Auto table image send error:', e.message);
-  }
 }
 
 
@@ -777,7 +764,7 @@ async function handleUIDResult(chatId, uid, data, approved) {
   const fn = data.firstName || 'User';
 
   if (approved) {
-    // ✅ UID is in our approved list — registered under WISEVIP
+    // ✅ UID is in our approved list — registered under Wise Advice
     saveFinal(chatId, { ...data, yubitUID: uid, status: 'approved' });
     const link = await createOneTimeVIPLink(chatId, fn);
     await sendProtectedVIPLink(
@@ -785,13 +772,11 @@ async function handleUIDResult(chatId, uid, data, approved) {
       `🎉 *UID VERIFIED SUCCESSFULLY!*\n${S}\n✅ UID *${uid}* confirmed under *Wise Advice*!\n💰 You qualify for VIP access!\n${S}\n🏆 *ONE-TIME VIP GROUP ACCESS:*`,
       link
     );
-    // 📢 1. Send clean Lead Notification Card to Admin Log Group
-    sendLeadToLogGroup(data, uid, 'approved', chatId);
-    // 📢 2. Auto send updated Colorful Table Image to Log Group
-    setTimeout(() => sendUpdatedTableImageToLogGroup(), 1000);
+    // 📢 Send 1-line VIP Approved Alert to Admin Log Group with details button
+    sendLeadToLogGroup(data, uid, 'approved', chatId, data.balance || data.deposit || '');
     console.log(`✅ UID ${uid} approved for chatId ${chatId}`);
   } else {
-    // ❌ UID not found in our list — not registered under WISEVIP
+    // ❌ UID not found in our list — not registered under Wise Advice
     users[chatId] = { ...data, yubitUID: uid, status: 'not_found', chatId };
     saveUsers(users);
     // Keep user state in Step 8 so they can directly enter new UID without /start!
@@ -807,10 +792,8 @@ async function handleUIDResult(chatId, uid, data, approved) {
       `❌ *UID Not Registered*\n${S}\nUID *${uid}* is not registered under Wise Advice ${exchName}.\n${S}\n🔗 *Register here to qualify:*\n${signupLink}\n${S}\n💰 Deposit *$100+*, then send your new UID below:`,
       { disable_web_page_preview: true }
     );
-    // 📢 1. Send clean Lead Notification Card to Admin Log Group
+    // 📢 Send 1-line Not Registered Alert to Admin Log Group with details button
     sendLeadToLogGroup(data, uid, 'not_found', chatId);
-    // 📢 2. Auto send updated Colorful Table Image to Log Group
-    setTimeout(() => sendUpdatedTableImageToLogGroup(), 1000);
     console.log(`❌ UID ${uid} NOT found for chatId ${chatId}`);
   }
 }
@@ -1147,29 +1130,30 @@ bot.onText(/\/?(broadcast|bc|📢 Broadcast)(?:\s+([\s\S]+))?/i, async (msg, mat
   );
 });
 
-// ─── CLEAN MARKDOWN TEXT TABLE GENERATOR ────────────────────────
+// ─── MOBILE-PERFECT MARKDOWN TEXT TABLE GENERATOR ─────────────
 function generateTextTable(list, title = 'USER DATABASE TABLE') {
   const dateStr = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', hour12: false }).substring(0, 16);
   let text = `📊 *${title}*\n━━━━━━━━━━━━━━━━━━━━\n`;
-  text += `👥 *Total Users:* \`${list.length}\`   |   🕒 \`${dateStr} IST\`\n\n`;
+  text += `👥 *Total Users:* \`${list.length}\`  |  🕒 \`${dateStr} IST\`\n\n`;
 
   text += `\`\`\`\n`;
-  text += ` # | Name       | Exch  | UID        | Status   \n`;
-  text += `---|------------|-------|------------|----------\n`;
+  text += ` #| Name    |Exch| UID      |St\n`;
+  text += `──┼─────────┼────┼──────────┼──\n`;
 
   list.forEach((d, i) => {
-    const idx = String(i + 1).padEnd(2, ' ');
-    const name = (d.firstName || d.userName || 'Trader').substring(0, 10).padEnd(10, ' ');
+    const idx = String(i + 1).padStart(2, ' ');
+    const name = (d.firstName || d.userName || 'User').substring(0, 8).padEnd(8, ' ');
     const rawExch = (d.q3 || d.exchangeChoice || 'WEEX').toUpperCase();
-    const exch = (rawExch.includes('WEEX') ? 'WEEX' : 'YUBIT').padEnd(5, ' ');
-    const uid = (d.yubitUID || 'N/A').substring(0, 10).padEnd(10, ' ');
-    const st = d.status === 'approved' ? 'APPROVED ' : 'PENDING  ';
+    const exch = (rawExch.includes('WEEX') ? 'WEEX' : 'YUBI').padEnd(4, ' ');
+    const uid = (d.yubitUID || '-').substring(0, 9).padEnd(9, ' ');
+    const st = d.status === 'approved' ? 'OK' : d.status === 'not_found' ? 'NF' : 'LD';
 
-    text += `${idx} | ${name} | ${exch} | ${uid} | ${st}\n`;
+    text += `${idx}| ${name} |${exch}| ${uid}|${st}\n`;
   });
 
   text += `\`\`\`\n`;
-  text += `📌 _Use /search <UID> or click on a lead card to view full user details._`;
+  text += `🟢 *OK:* Approved  🟡 *LD:* Low Deposit  ❌ *NF:* Not Registered\n`;
+  text += `📌 _Use /search <UID> or click lead card button for details._`;
   return text;
 }
 
@@ -1650,11 +1634,13 @@ bot.on('message', async (msg) => {
       }
 
       if (result) {
+        st.data.exchangeChoice = usedExch;
         if (result.error && result.fallback) {
           console.log(`⚠️ API failed for UID ${uid}, using local check. Error: ${result.error}`);
           const localOk = isApprovedUID(uid);
           await handleUIDResult(id, uid, st.data, localOk);
         } else if (result.isReferral && result.depositOk) {
+          st.data.balance = result.deposit || result.balance || '100.00';
           addUID(uid); // Save to local DB for records
           await handleUIDResult(id, uid, st.data, true);
         } else if (result.isReferral && !result.depositOk) {
@@ -1667,7 +1653,7 @@ bot.on('message', async (msg) => {
             `💰 *Please deposit at least $100* on ${usedExch}, then send your UID again below:`,
             { disable_web_page_preview: true }
           );
-          sendToLogGroup(`⚠️ *DEPOSIT LOW (${usedExch === 'WEEX' ? '🌐 WEEX' : '🟡 YUBIT'}):* UID \`${uid}\` | Balance: $${result.balance || '0'}`);
+          sendLeadToLogGroup(st.data, uid, 'deposit_low', id, result.deposit || result.balance);
         } else {
           await handleUIDResult(id, uid, st.data, false);
         }
