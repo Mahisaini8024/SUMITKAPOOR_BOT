@@ -1151,9 +1151,7 @@ function generateTextTable(list, title = 'USER DATABASE TABLE') {
     text += `${idx}| ${name} |${exch}| ${uid}|${st}\n`;
   });
 
-  text += `\`\`\`\n`;
-  text += `🟢 *OK:* Approved  🟡 *LD:* Low Deposit  ❌ *NF:* Not Registered\n`;
-  text += `📌 _Use /search <UID> or click lead card button for details._`;
+  text += `\`\`\``;
   return text;
 }
 
