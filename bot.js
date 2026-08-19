@@ -209,6 +209,23 @@ function yubitFetch(path, queryString, headers) {
   });
 }
 
+// ─── YUBIT SERVER TIME SYNC ─────────────────────────────────
+let yubitTimeOffset = 0;
+async function syncYubitTime() {
+  try {
+    const res = await yubitFetch('/oapi/partner/affiliate/private/v1/validateUser', '', {});
+    const json = await res.json();
+    if (json && json.time) {
+      yubitTimeOffset = Number(json.time) - Date.now();
+      console.log(`⏰ YUBIT Time Synced! Offset: ${Math.round(yubitTimeOffset / 1000)}s`);
+    }
+  } catch (e) {
+    console.log('⚠️ Yubit time sync check:', e.message);
+  }
+}
+setTimeout(syncYubitTime, 1500);
+setInterval(syncYubitTime, 5 * 60 * 1000); // sync every 5 min
+
 // ─── YUBIT API SIGNATURE HELPER ──────────────────────────────
 function generateYubitSignature(method, path, timestamp, apiKey, recvWindow, payload = '') {
   const originalText = method.toUpperCase() + path + timestamp + apiKey + recvWindow + payload;
@@ -237,31 +254,27 @@ async function verifyUIDViaYubitAPI(uid) {
   }
 
   try {
-    const timestamp = String(Date.now() + timeOffset);
-    const recvWindow = '5000';
+    const timestamp = String(Date.now() + yubitTimeOffset);
+    const recvWindow = '10000';
 
     // Step 1: Validate User — check if this UID is a direct referral under our partner account
     const valPath = '/oapi/partner/affiliate/private/v1/validateUser';
     const valQS = `uid=${uid}`;
     const valHeaders = getYubitHeaders('GET', valPath, timestamp, YUBIT_API_KEY, recvWindow, valQS);
-    const valUrl = `${YUBIT_API_BASE}${valPath}?${valQS}`;
 
     console.log(`🔍 YUBIT API: Validating UID ${uid}...`);
     const valRes = await yubitFetch(valPath, valQS, valHeaders);
     const valJson = await valRes.json();
     console.log(`📡 YUBIT Validate Response:`, JSON.stringify(valJson));
 
+    // If server returned time, update offset dynamically
+    if (valJson.time) {
+      yubitTimeOffset = Number(valJson.time) - Date.now();
+    }
+
     // ─── IP Mismatch (code 26200012) ─────────────────────────────
     if (valJson.code === 26200012 || valJson.message === 'unmatched ip.') {
       console.log(`⚠️ YUBIT IP mismatch for UID ${uid} — using local DB fallback`);
-      // Alert admin with new IP to whitelist (only if not using proxy)
-      if (!YUBIT_PROXY_URL) {
-        fetch('https://api.ipify.org?format=json')
-          .then(r => r.json())
-          .then(d => sendToLogGroup(
-            `🚨 *YUBIT IP MISMATCH!*\n━━━━━━━━━━━━━━━━━━━━\n🌐 Server IP: \`${d.ip}\`\n📌 Whitelist karo Yubit Team (@YUBIT_CS03) se!\n⚠️ Tab tak Local DB se kaam chalega.`
-          )).catch(() => {});
-      }
       const localOk = isApprovedUID(uid);
       return { isReferral: localOk, depositOk: localOk, deposit: localOk ? '100.00' : '0.00', balance: localOk ? '100.00' : '0.00', ipFallback: true };
     }
@@ -283,7 +296,7 @@ async function verifyUIDViaYubitAPI(uid) {
 
     const balPath = '/oapi/partner/affiliate/private/v1/get-user-all-balance';
     const balQS = `uid=${uid}`;
-    const balTimestamp = String(Date.now() + timeOffset);
+    const balTimestamp = String(Date.now() + yubitTimeOffset);
     const balHeaders = getYubitHeaders('GET', balPath, balTimestamp, YUBIT_API_KEY, recvWindow, balQS);
 
     console.log(`💰 YUBIT API: Checking balance for UID ${uid}...`);
@@ -292,7 +305,7 @@ async function verifyUIDViaYubitAPI(uid) {
     console.log(`📡 YUBIT Balance Response:`, JSON.stringify(balJson));
 
     let totalBal = 0;
-    if (balJson.code === 0 && balJson.result && balJson.result.items && balJson.result.items.length > 0) {
+    if ((balJson.code === 0 || balJson.code === '0') && balJson.result && balJson.result.items && balJson.result.items.length > 0) {
       const item = balJson.result.items[0];
       totalBal = parseFloat(item.totalBalance || item.fundingBalance || item.availableBalance || '0');
     }
