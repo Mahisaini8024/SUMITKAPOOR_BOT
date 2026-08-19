@@ -156,24 +156,57 @@ async function verifyUIDViaWeexAPI(uid) {
 const YUBIT_API_KEY    = process.env.YUBIT_API_KEY    || '';
 const YUBIT_SECRET_KEY = process.env.YUBIT_SECRET_KEY || '';
 const YUBIT_API_BASE   = 'https://openapi.yubit.com';
-// Cloudflare Worker Proxy (set in Railway Variables as YUBIT_PROXY_URL)
-// Format: https://yubit-proxy.YOUR_NAME.workers.dev
-const YUBIT_PROXY_URL    = process.env.YUBIT_PROXY_URL    || '';
-const YUBIT_PROXY_SECRET = process.env.YUBIT_PROXY_SECRET || '';
 
-// ─── YUBIT API FETCH (via Cloudflare Worker or Direct) ───────
-async function yubitFetch(path, queryString, headers) {
-  // If Cloudflare Worker proxy is configured, use it (fixed IP!)
-  if (YUBIT_PROXY_URL && YUBIT_PROXY_SECRET) {
-    const proxyUrl = `${YUBIT_PROXY_URL}?path=${encodeURIComponent(path)}&qs=${encodeURIComponent(queryString)}`;
-    const proxyHeaders = Object.assign({}, headers, { 'X-Proxy-Secret': YUBIT_PROXY_SECRET });
-    console.log(`🌐 YUBIT via Cloudflare Worker Proxy...`);
-    return fetch(proxyUrl, { method: 'GET', headers: proxyHeaders });
-  }
-  // Fallback: direct call (IP may mismatch on Railway)
-  const directUrl = `${YUBIT_API_BASE}${path}${queryString ? '?' + queryString : ''}`;
-  console.log(`🌐 YUBIT Direct API call...`);
-  return fetch(directUrl, { method: 'GET', headers });
+// ─── WEBSHARE STATIC IP PROXY CONFIG (Dedicated IP: 31.59.20.176) ───
+const https = require('https');
+let HttpsProxyAgent = null;
+const STATIC_PROXY_URL = process.env.YUBIT_STATIC_PROXY || 'http://qnmoekzb:xxyeb710yxai@31.59.20.176:6754';
+
+import('https-proxy-agent').then(m => {
+  HttpsProxyAgent = m.HttpsProxyAgent;
+  console.log('✅ Webshare Static IP Proxy Loaded! (Dedicated IP: 31.59.20.176)');
+}).catch(e => console.error('⚠️ Proxy agent import error:', e.message));
+
+// ─── YUBIT API FETCH (routed via Static IP Proxy 31.59.20.176) ───
+function yubitFetch(path, queryString, headers) {
+  return new Promise((resolve, reject) => {
+    const urlStr = `${YUBIT_API_BASE}${path}${queryString ? '?' + queryString : ''}`;
+    const urlObj = new URL(urlStr);
+
+    const options = {
+      hostname: urlObj.hostname,
+      port: 443,
+      path: urlObj.pathname + urlObj.search,
+      method: 'GET',
+      headers: headers,
+      timeout: 12000
+    };
+
+    if (HttpsProxyAgent && STATIC_PROXY_URL) {
+      options.agent = new HttpsProxyAgent(STATIC_PROXY_URL);
+    }
+
+    const req = https.request(options, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        try {
+          const json = JSON.parse(data);
+          resolve({ status: res.statusCode, json: async () => json });
+        } catch (e) {
+          resolve({ status: res.statusCode, json: async () => ({ error: 'Invalid JSON', raw: data }) });
+        }
+      });
+    });
+
+    req.on('error', (err) => reject(err));
+    req.on('timeout', () => {
+      req.destroy();
+      reject(new Error('YUBIT API Request Timeout via Static Proxy'));
+    });
+
+    req.end();
+  });
 }
 
 // ─── YUBIT API SIGNATURE HELPER ──────────────────────────────
