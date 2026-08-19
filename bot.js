@@ -571,16 +571,30 @@ function escMd(s) { return String(s).replace(/[_*[\]`]/g, '\\$&'); }
 function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 function isAdmin(id) { return ADMIN_ID && String(id) === String(ADMIN_ID); }
 
-// ─── UID DATABASE ─────────────────────────────────────────────
-// approved_uids.json = { "12345678": true, "87654321": true, ... }
+// ─── UID DATABASE (Exchange Aware) ─────────────────────────────
+// approved_uids.json = { "9701036924": "WEEX", "1594507264": "YUBIT", ... }
 function loadUIDs() {
   try { return JSON.parse(fs.readFileSync(UID_FILE, 'utf8')); }
   catch (_) { return {}; }
 }
 function saveUIDs(db) { fs.writeFileSync(UID_FILE, JSON.stringify(db, null, 2)); }
-function isApprovedUID(uid) { const db = loadUIDs(); return !!db[String(uid).trim()]; }
-function addUID(uid) { const db = loadUIDs(); db[String(uid).trim()] = true; saveUIDs(db); }
-function removeUID(uid) { const db = loadUIDs(); delete db[String(uid).trim()]; saveUIDs(db); }
+function isApprovedUID(uid, exch = null) {
+  const db = loadUIDs();
+  const val = db[String(uid).trim()];
+  if (!val) return false;
+  if (!exch) return true;
+  return val === true || val === 'ANY' || String(val).toUpperCase() === String(exch).toUpperCase();
+}
+function addUID(uid, exch = 'ANY') {
+  const db = loadUIDs();
+  db[String(uid).trim()] = exch;
+  saveUIDs(db);
+}
+function removeUID(uid) {
+  const db = loadUIDs();
+  delete db[String(uid).trim()];
+  saveUIDs(db);
+}
 function countUIDs() { return Object.keys(loadUIDs()).length; }
 
 // ─── USER DATA ────────────────────────────────────────────────
@@ -1584,85 +1598,66 @@ bot.on('message', async (msg) => {
       await sendDecision(id, st.data, st.data.firstName || 'User');
 
     } else if (st.step === 8 || (st.step >= 7 && vUID(text))) {
-      // ── UID VERIFICATION ────────────────────────────────────
+      // ── UID VERIFICATION (Strict Per Exchange) ──────────────
       if (!vUID(text)) { await send(id, pick(ERR.uid)); return; }
       const uid = text.trim();
       st.data.yubitUID = uid;
       st.step = 8;
       setState(id, st);
 
-      // 1. Local Whitelist Check (Admin Added / Approved UIDs)
-      if (isApprovedUID(uid)) {
-        console.log(`✅ UID ${uid} found in local approved list!`);
+      const rawExch = (st.data.exchangeChoice || st.data.q3 || 'WEEX').toUpperCase();
+      const targetExch = rawExch.includes('WEEX') ? 'WEEX' : 'YUBIT';
+      st.data.exchangeChoice = targetExch;
+
+      // 1. Local Whitelist Check for this specific exchange
+      if (isApprovedUID(uid, targetExch)) {
+        console.log(`✅ UID ${uid} found in local approved list for ${targetExch}!`);
         await handleUIDResult(id, uid, st.data, true);
         return;
       }
 
-      // 2. Dual Exchange Live API Check (WEEX & YUBIT Auto-Detection)
-      const exch = (st.data.exchangeChoice || '').toUpperCase();
-      let primaryExch = exch.includes('WEEX') ? 'WEEX' : 'YUBIT';
-
+      // 2. Strict Live API Check against chosen Exchange
       let result = null;
-      let usedExch = primaryExch;
-
-      if (primaryExch === 'WEEX' && WEEX_API_KEY) {
+      if (targetExch === 'WEEX' && WEEX_API_KEY) {
         await send(id, `🔍 *Checking UID ${uid}...*\n${S}\n⏳ Verifying with WEEX server... Please wait.`);
         result = await verifyUIDViaWeexAPI(uid);
-        // If not found on WEEX, fallback check YUBIT automatically
-        if (!result.isReferral && YUBIT_API_KEY) {
-          console.log(`🔍 WEEX not matched for ${uid}, checking YUBIT...`);
-          const yRes = await verifyUIDViaYubitAPI(uid);
-          if (yRes.isReferral || yRes.depositOk) {
-            result = yRes;
-            usedExch = 'YUBIT';
-          }
-        }
-      } else if (YUBIT_API_KEY) {
+      } else if (targetExch === 'YUBIT' && YUBIT_API_KEY) {
         await send(id, `🔍 *Checking UID ${uid}...*\n${S}\n⏳ Verifying with YUBIT server... Please wait.`);
         result = await verifyUIDViaYubitAPI(uid);
-        // If not found on YUBIT, fallback check WEEX automatically
-        if (!result.isReferral && WEEX_API_KEY) {
-          console.log(`🔍 YUBIT not matched for ${uid}, checking WEEX...`);
-          const wRes = await verifyUIDViaWeexAPI(uid);
-          if (wRes.isReferral || wRes.depositOk) {
-            result = wRes;
-            usedExch = 'WEEX';
-          }
-        }
       }
 
       if (result) {
-        st.data.exchangeChoice = usedExch;
         if (result.error && result.fallback) {
           console.log(`⚠️ API failed for UID ${uid}, using local check. Error: ${result.error}`);
-          const localOk = isApprovedUID(uid);
+          const localOk = isApprovedUID(uid, targetExch);
           await handleUIDResult(id, uid, st.data, localOk);
         } else if (result.isReferral && result.depositOk) {
           st.data.balance = result.deposit || result.balance || '100.00';
-          addUID(uid); // Save to local DB for records
+          addUID(uid, targetExch); // Save to local DB with exchange name
           await handleUIDResult(id, uid, st.data, true);
         } else if (result.isReferral && !result.depositOk) {
           st.step = 8;
           setState(id, st);
           await send(id,
             `⚠️ *Low Deposit Warning*\n${S}\n` +
-            `✅ UID *${uid}* is registered under Wise Advice (${usedExch})!\n` +
+            `✅ UID *${uid}* is registered under Wise Advice (${targetExch})!\n` +
             `❌ Current Balance: *$${result.deposit}* (Required: *$100+*)\n${S}\n` +
-            `💰 *Please deposit at least $100* on ${usedExch}, then send your UID again below:`,
+            `💰 *Please deposit at least $100* on ${targetExch}, then send your UID again below:`,
             { disable_web_page_preview: true }
           );
           sendLeadToLogGroup(st.data, uid, 'deposit_low', id, result.deposit || result.balance);
         } else {
+          // ❌ Not a referral on chosen exchange
           await handleUIDResult(id, uid, st.data, false);
         }
         return;
       }
 
-      // 4. Fallback Standard Check (Local DB matching)
+      // 3. Fallback Standard Check (Local DB matching)
       await send(id, `🔍 *Checking UID ${uid}...*\n${S}\n⏳ Verifying Wise Advice registration...`);
       await new Promise(r => setTimeout(r, 1200));
 
-      const isApproved = isApprovedUID(uid);
+      const isApproved = isApprovedUID(uid, targetExch);
       await handleUIDResult(id, uid, st.data, isApproved);
       return;
     }
