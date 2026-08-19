@@ -188,7 +188,7 @@ async function verifyUIDViaYubitAPI(uid) {
     const timestamp = String(Date.now() + timeOffset);
     const recvWindow = '5000';
 
-    // Step 1: Validate User (Check if direct referral under partner)
+    // Step 1: Validate User — check if this UID is a direct referral under our partner account
     const valPath = '/oapi/partner/affiliate/private/v1/validateUser';
     const valQS = `uid=${uid}`;
     const valHeaders = getYubitHeaders('GET', valPath, timestamp, YUBIT_API_KEY, recvWindow, valQS);
@@ -199,16 +199,33 @@ async function verifyUIDViaYubitAPI(uid) {
     const valJson = await valRes.json();
     console.log(`📡 YUBIT Validate Response:`, JSON.stringify(valJson));
 
-    // Handle Unmatched IP or API restrictions gracefully with smart referral fallback
+    // ─── IP Mismatch Fallback (code 26200012) ────────────────────
     if (valJson.code === 26200012 || valJson.message === 'unmatched ip.') {
-      console.log(`⚠️ YUBIT API IP unmatched for UID ${uid}, treating as registered under Wise Advice (Low Deposit flow).`);
-      return { isReferral: true, depositOk: false, deposit: '0.00', balance: '0.00', fallback: false };
+      console.log(`⚠️ YUBIT IP mismatch for UID ${uid} — fallback: Low Deposit Warning`);
+      return { isReferral: true, depositOk: false, deposit: '0.00', balance: '0.00', ipFallback: true };
     }
 
-    // Step 2: Check balance / deposits
+    // ─── NOT a referral under Wise Advice ────────────────────────
+    // valJson.data === false means UID exists on Yubit but NOT registered under our invite code
+    // Any other non-zero code also means failure
+    if (valJson.data === false || valJson.data === 'false') {
+      console.log(`❌ YUBIT: UID ${uid} is NOT under Wise Advice referral`);
+      return { isReferral: false, depositOk: false, deposit: '0.00', balance: '0.00', error: null };
+    }
+
+    // ─── API error / UID not found ────────────────────────────────
+    if (valJson.code !== 0 && valJson.code !== '0' && valJson.data !== true) {
+      console.log(`❌ YUBIT: UID ${uid} validation failed — code: ${valJson.code}, msg: ${valJson.message}`);
+      return { isReferral: false, depositOk: false, deposit: '0.00', balance: '0.00', error: valJson.message || 'UID not found' };
+    }
+
+    // ─── UID IS a valid referral — now check balance ──────────────
+    console.log(`✅ YUBIT: UID ${uid} confirmed under Wise Advice! Checking balance...`);
+
     const balPath = '/oapi/partner/affiliate/private/v1/get-user-all-balance';
     const balQS = `uid=${uid}`;
-    const balHeaders = getYubitHeaders('GET', balPath, timestamp, YUBIT_API_KEY, recvWindow, balQS);
+    const balTimestamp = String(Date.now() + timeOffset); // fresh timestamp for 2nd call
+    const balHeaders = getYubitHeaders('GET', balPath, balTimestamp, YUBIT_API_KEY, recvWindow, balQS);
     const balUrl = `${YUBIT_API_BASE}${balPath}?${balQS}`;
 
     console.log(`💰 YUBIT API: Checking balance for UID ${uid}...`);
@@ -217,15 +234,13 @@ async function verifyUIDViaYubitAPI(uid) {
     console.log(`📡 YUBIT Balance Response:`, JSON.stringify(balJson));
 
     let totalBal = 0;
-    let foundInBalance = false;
-    if (balJson.result && balJson.result.items && balJson.result.items.length > 0) {
+    if (balJson.code === 0 && balJson.result && balJson.result.items && balJson.result.items.length > 0) {
       const item = balJson.result.items[0];
-      totalBal = parseFloat(item.totalBalance || item.fundingBalance || '0');
-      foundInBalance = true;
+      totalBal = parseFloat(item.totalBalance || item.fundingBalance || item.availableBalance || '0');
     }
 
-    const isReferral = (valJson.data === true) || foundInBalance || (valJson.code === 0 || valJson.code === '0');
     const depositOk = totalBal >= 100;
+    console.log(`💰 YUBIT: UID ${uid} balance = $${totalBal.toFixed(2)} | depositOk = ${depositOk}`);
 
     return {
       isReferral: true,
@@ -236,7 +251,7 @@ async function verifyUIDViaYubitAPI(uid) {
     };
   } catch (err) {
     console.error('❌ YUBIT API Error:', err.message);
-    return { isReferral: true, depositOk: false, deposit: '0.00', balance: '0.00', error: err.message, fallback: true };
+    return { isReferral: false, depositOk: false, deposit: '0.00', balance: '0.00', error: err.message, fallback: true };
   }
 }
 
