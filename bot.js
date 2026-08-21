@@ -562,6 +562,15 @@ bot.setChatMenuButton({
   })
 }).catch(() => {});
 
+// Set Bot Description (Shown on "What can this bot do?" before Start)
+bot.setMyDescription({
+  description: `🔥 OFFICIAL VIP CHANNEL 🔥\n⚡ OFFICIAL VIP PORTAL ⚡\n\n🏆 $1,000,000 CHALLENGE\n💰 $250,000 ➔ $1,000,000\n\n🎁 EXCLUSIVE VIP PERKS:\n🎯 95%+ Accuracy VIP Signals\n💰 Instant Deposit Bonus\n📈 Daily Volume Rewards\n\n👉 Click 👇 to Register & Join:\n/start — Begin Verification`
+}).catch(() => {});
+
+bot.setMyShortDescription({
+  short_description: `🔥 OFFICIAL VIP CHANNEL — $1M Trading Challenge & VIP Signals`
+}).catch(() => {});
+
 // ─── SEPARATORS / PROGRESS ───────────────────────────────────
 const S = '━━━━━━━━━━━━━━━━━━━━';
 function progressBar(step, total = 6) {
@@ -655,8 +664,8 @@ const rkD = ()    => ({
 const rkSignalsMenu = () => ({
   reply_markup: {
     keyboard: [
-      [{ text: 'WEEX' }],
       [{ text: 'YUBIT' }],
+      [{ text: 'WEEX' }],
       [{ text: '🔙 Back to Main Menu' }]
     ],
     resize_keyboard: true,
@@ -694,10 +703,10 @@ const vUID      = v => /^\d{4,20}$/.test(v.trim());
 
 // ─── MESSAGES ─────────────────────────────────────────────────
 const CAPTIONS = [
-  `✦ *WISE ADVICE × WEEX* ✦\n${S}\n💰 *$1,000,000 CHALLENGE*\n\n📊 Entry ›› $250,000 USDT\n🏆 Target ›› $1,000,000 USDT\n⚡ ROI ›› 4× in 1 Challenge\n${S}\n👋 Hey *{FN}* — let's go!\n${S}\n🔗 *Signup via Wise Advice:*\n${WEEX_SIGNUP}`,
-  `👑 *MILLION DOLLAR CLUB* 👑\n${S}\n🚀 *WEEX × WISE ADVICE QUEST*\n\n⚔️  $250K ──► $1M\n🎯  1 Account · 1 Goal\n${S}\n🔥 Welcome *{FN}*!\n${S}\n🔑 *Register via Wise Advice:*\n${WEEX_SIGNUP}`,
-  `💎 *ELITE TRADING ARENA* 💎\n${S}\n🏆 *WISE ADVICE × WEEX — $1M*\n\n  💵 Start ›  $250K USDT\n  🎯 Goal  ›  $1M USDT\n  📈 Skill + Discipline\n${S}\n🔥 *{FN}* — are you ready?\n${S}\n⚡ *Join WEEX (Wise Advice):*\n${WEEX_SIGNUP}`,
-  `🔱 *WISE ADVICE ROYALTY* 🔱\n${S}\n🎯 *$1M TRADING CHALLENGE*\n\n  🏛️ Only Serious Traders\n  📡 Premium Signals\n  💰 Life-Changing Money\n${S}\n✨ Namaste *{FN}* — welcome!\n${S}\n🚀 *Signup via Wise Advice:*\n${WEEX_SIGNUP}`,
+  `✦ *OFFICIAL VIP CHANNEL* ✦\n${S}\n💰 *$1,000,000 CHALLENGE*\n\n📊 Entry ›› $250,000 USDT\n🏆 Target ›› $1,000,000 USDT\n⚡ ROI ›› 4× in 1 Challenge\n${S}\n👋 Hey *{FN}* — let's go!\n${S}\n🔑 *Register via Wise Advice:*\n🟡 *YUBIT:* ${YUBIT_SIGNUP}\n🟢 *WEEX:* ${WEEX_SIGNUP}`,
+  `👑 *MILLION DOLLAR CLUB* 👑\n${S}\n🚀 *WISE ADVICE $1M CHALLENGE*\n\n⚔️  $250K ──► $1M\n🎯  1 Account · 1 Goal\n${S}\n🔥 Welcome *{FN}*!\n${S}\n🔑 *Register via Wise Advice:*\n🟡 *YUBIT:* ${YUBIT_SIGNUP}\n🟢 *WEEX:* ${WEEX_SIGNUP}`,
+  `💎 *ELITE TRADING ARENA* 💎\n${S}\n🏆 *OFFICIAL VIP CHANNEL — $1M*\n\n  💵 Start ›  $250K USDT\n  🎯 Goal  ›  $1M USDT\n  📈 Skill + Discipline\n${S}\n🔥 *{FN}* — are you ready?\n${S}\n🔑 *Register via Wise Advice:*\n🟡 *YUBIT:* ${YUBIT_SIGNUP}\n🟢 *WEEX:* ${WEEX_SIGNUP}`,
+  `🔱 *WISE ADVICE ROYALTY* 🔱\n${S}\n🎯 *$1M TRADING CHALLENGE*\n\n  🏛️ Only Serious Traders\n  📡 Premium Signals\n  💰 Life-Changing Money\n${S}\n✨ Namaste *{FN}* — welcome!\n${S}\n🔑 *Register via Wise Advice:*\n🟡 *YUBIT:* ${YUBIT_SIGNUP}\n🟢 *WEEX:* ${WEEX_SIGNUP}`,
 ];
 const INTROS = [
   fn => `🔐 *VIP ACCESS PORTAL*\n${S}\n👋 Salaam *${fn}*!\n\nComplete 6-step verification to unlock the *$1M Group*. All fields are *mandatory*.\n${S}\n📊 Progress: ${progressBar(0)}\n${S}\n📌 *Step 1 of 6 — Region*\n🌍 Where are you from?`,
@@ -725,7 +734,7 @@ const FINAL_OK = [
   (fn, d) => `🏆 *REGISTRATION COMPLETE!*\n${S}\n🎉 Congrats, *${fn}*!\n📊 Progress: ${progressBar(6)} ✅\n${S}\n📋 *YOUR SUMMARY:*\n\n🌍 Country  › ${escMd(d.q1)}\n💰 Capital  › ${escMd(d.q2)}\n📊 Exchange › ${escMd(d.q3)}\n📧 Email    › ${escMd(d.q4)}\n💬 Telegram › ${escMd(d.q5)}\n📱 Mobile   › ${d.q6}\n${S}\n🔓 Access submitted!\n👇 Join VIP group below:`,
 ];
 const DEC_MSGS = [
-  () => `🔥 *WISE ADVICE × YUBIT VIP* 🔥\n${S}\nWe will give you:\n• 📡 *Free VIP signals* for futures trading in Our VIP Group.\n• 💰 *Deposit Bonus*\n• 📈 *Volume Bonus*\n\n⚠️ *Only condition:* You have to Signup using our Link and you must have *$100* in your Yubit Wallet to join our VIP group.\n${S}\n👇 *Select an option below:*`
+  () => `🔥 *OFFICIAL VIP CHANNEL* 🔥\n${S}\nWe will give you:\n• 📡 *Free VIP signals* for futures trading in Our VIP Group.\n• 💰 *Deposit Bonus*\n• 📈 *Volume Bonus*\n\n⚠️ *Only condition:* You have to Signup using our Link and you must have *$100* in your Wallet to join our VIP group.\n${S}\n👇 *Select an option below:*`
 ];
 const UID_MSGS = [
   fn => `✅ *WISE ADVICE MEMBER FOUND*\n${S}\nGreat, *${fn}*! You're already family.\n${S}\n🔑 *Final Step — Yubit UID*\n\n💡 *How to find your UID:*\n1️⃣ Open Yubit App\n2️⃣ Go to Profile / Me\n3️⃣ Copy UID (numbers only)\n\n⚡ Min *$100 balance* needed.\n${S}\n👇 Paste your *YUBIT UID*:`,
