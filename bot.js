@@ -1080,20 +1080,28 @@ bot.onText(/\/?(search|🔍 Search UID|🔍 Search)(?:\s+(.+))?/i, async (msg, m
   }
 
   for (const targetUser of matches.slice(0, 5)) {
-    const st = targetUser.status === 'approved' ? '✅ Approved' : targetUser.status === 'not_found' ? '❌ Not Found' : '⏳ Pending';
-    const date = targetUser.completedAt ? new Date(targetUser.completedAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', hour12: false }) : 'N/A';
+    const st      = targetUser.status === 'approved' ? '✅ Approved' : targetUser.status === 'not_found' ? '❌ Not Found' : '⏳ Pending';
+    const date    = targetUser.completedAt ? new Date(targetUser.completedAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', hour12: false }) : 'N/A';
+    const name    = targetUser.firstName || 'User';
+    const country = targetUser.q1 || 'Incomplete Form';
+    const capital = targetUser.q2 || 'Incomplete Form';
+    const exch    = (targetUser.q3 || targetUser.exchangeChoice || 'YUBIT').toUpperCase();
+    const email   = targetUser.q4 || 'Incomplete Form';
+    const tlgrm   = targetUser.q5 || (targetUser.userName ? `@${targetUser.userName}` : '@User');
+    const mob     = targetUser.q6 || 'Incomplete Form';
+    const uid     = targetUser.yubitUID || 'N/A';
     
     const card =
       `👤 *USER DETAILS MATCHED*\n━━━━━━━━━━━━━━━━━━━━\n` +
-      `• *Name:* ${targetUser.firstName || 'N/A'}\n` +
-      `• *UID:* \`${targetUser.yubitUID || 'N/A'}\`\n` +
+      `• *Name:* ${escMd(name)}\n` +
+      `• *UID:* \`${uid}\`\n` +
       `• *Status:* ${st}\n` +
-      `• *Exchange:* ${targetUser.q3 || 'N/A'}\n` +
-      `• *Country:* ${targetUser.q1 || 'N/A'}\n` +
-      `• *Capital:* ${targetUser.q2 || 'N/A'}\n` +
-      `• *Email:* ${targetUser.q4 || 'N/A'}\n` +
-      `• *Telegram:* ${targetUser.q5 || 'N/A'}\n` +
-      `• *Mobile:* ${targetUser.q6 || 'N/A'}\n` +
+      `• *Exchange:* ${escMd(exch)}\n` +
+      `• *Country:* ${escMd(country)}\n` +
+      `• *Capital:* ${escMd(capital)}\n` +
+      `• *Email:* ${escMd(email)}\n` +
+      `• *Telegram:* ${escMd(tlgrm)}\n` +
+      `• *Mobile:* ${escMd(mob)}\n` +
       `• *Chat ID:* \`${targetUser.chatId}\`\n` +
       `• *Registered:* ${date}`;
 
@@ -1371,21 +1379,29 @@ bot.on('callback_query', async (cb) => {
     const targetUser = u[targetChatId];
     if (!targetUser) return bot.sendMessage(id, `❌ User data not found for Chat ID: ${targetChatId}`);
 
-    const badge = targetUser.status === 'approved' ? '✅ VERIFIED' : targetUser.status === 'not_found' ? '❌ NOT FOUND' : '⏳ PENDING';
-    const date  = targetUser.completedAt ? new Date(targetUser.completedAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', hour12: false }) : 'N/A';
+    const badge   = targetUser.status === 'approved' ? '✅ VERIFIED' : targetUser.status === 'not_found' ? '❌ NOT FOUND' : '⏳ PENDING';
+    const date    = targetUser.completedAt ? new Date(targetUser.completedAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', hour12: false }) : 'N/A';
+    const name    = targetUser.firstName || 'User';
+    const country = targetUser.q1 || 'Incomplete Form';
+    const capital = targetUser.q2 || 'Incomplete Form';
+    const exch    = (targetUser.q3 || targetUser.exchangeChoice || 'YUBIT').toUpperCase();
+    const email   = targetUser.q4 || 'Incomplete Form';
+    const tlgrm   = targetUser.q5 || (targetUser.userName ? `@${targetUser.userName}` : '@User');
+    const mob     = targetUser.q6 || 'Incomplete Form';
+    const uid     = targetUser.yubitUID || 'N/A';
 
     const card =
       `👤 *USER PROFILE* ${badge}\n` +
       `───────────────\n` +
-      `👤 *Name:* ${escMd(targetUser.firstName || 'N/A')}\n` +
-      `🌍 *Country:* ${escMd(targetUser.q1 || 'N/A')}\n` +
-      `💰 *Capital:* ${escMd(targetUser.q2 || 'N/A')}\n` +
-      `📊 *Exchg:* ${escMd(targetUser.q3 || 'N/A')}\n` +
-      `📧 *Email:* ${escMd(targetUser.q4 || 'N/A')}\n` +
-      `💬 *Tlgrm:* ${escMd(targetUser.q5 || 'N/A')}\n` +
-      `📱 *Mob:* ${escMd(targetUser.q6 || 'N/A')}\n` +
-      `🔑 *UID:* \`${targetUser.yubitUID || 'N/A'}\`\n` +
-      `🆔 *ChatID:* \`${targetUser.chatId || 'N/A'}\`\n` +
+      `👤 *Name:* ${escMd(name)}\n` +
+      `🌍 *Country:* ${escMd(country)}\n` +
+      `💰 *Capital:* ${escMd(capital)}\n` +
+      `📊 *Exchg:* ${escMd(exch)}\n` +
+      `📧 *Email:* ${escMd(email)}\n` +
+      `💬 *Tlgrm:* ${escMd(tlgrm)}\n` +
+      `📱 *Mob:* ${escMd(mob)}\n` +
+      `🔑 *UID:* \`${uid}\`\n` +
+      `🆔 *ChatID:* \`${targetChatId}\`\n` +
       `🕐 *Time:* ${date}\n` +
       `───────────────`;
     return bot.sendMessage(id, card, { parse_mode: 'Markdown', protect_content: true });
@@ -1538,28 +1554,44 @@ bot.on('message', async (msg) => {
     }
 
     if (text === 'Signup on WEEX') {
-      saveFinal(id, st.data);
+      st.data.exchangeChoice = 'WEEX';
+      st.data.q3 = 'WEEX';
       await send(id, `🚀 *SIGNUP ON WEEX*\n${S}\nRegister using the link below to qualify for Wise Advice VIP access:\n\n🔗 ${WEEX_SIGNUP}\n${S}\n✅ After registering & depositing $100+, click *Already a member on WEEX* to enter your UID!`, { disable_web_page_preview: true });
       return;
     }
 
     if (text === 'Signup on YUBIT' || text === 'Signup on Yubit') {
-      saveFinal(id, st.data);
+      st.data.exchangeChoice = 'YUBIT';
+      st.data.q3 = 'YUBIT';
       await send(id, `🚀 *SIGNUP ON YUBIT*\n${S}\nRegister using the link below to qualify for Wise Advice VIP access & bonuses:\n\n🔗 ${YUBIT_SIGNUP}\n${S}\n✅ After registering & depositing $100+, click *Already a member on YUBIT* to enter your UID!`, { disable_web_page_preview: true });
       return;
     }
 
     if (text.includes('Already a member on WEEX') || text.includes('WEEX under Wise Advice')) {
-      st.step = 8;
       st.data.exchangeChoice = 'WEEX';
+      st.data.q3 = 'WEEX';
+      if (!st.data.q1 || !st.data.q4 || !st.data.q6) {
+        st.step = 1;
+        setState(id, st);
+        await send(id, `📋 *REGISTRATION FORM REQUIRED*\n${S}\nBefore verifying your UID, please complete the 6 quick registration steps (Country, Capital, Email, Mobile) so your details can be verified.\n\n📌 *Step 1 of 6 — Region*\n🌍 Where are you from?`, rkGrid(OPTIONS_LIST.q1, 3));
+        return;
+      }
+      st.step = 8;
       setState(id, st);
       await send(id, `🔑 *Enter your WEEX User ID (UID)*\n${S}\n💡 *Where to find:* WEEX App ➔ Profile\n📌 Must have *$100+ balance* to unlock VIP.\n${S}\n👇 *Send your WEEX UID below:*`);
       return;
     }
 
     if (text.includes('Already a member on YUBIT') || text.includes('YUBIT under Wise Advice') || text.includes('Already Member')) {
-      st.step = 8;
       st.data.exchangeChoice = 'YUBIT';
+      st.data.q3 = 'YUBIT';
+      if (!st.data.q1 || !st.data.q4 || !st.data.q6) {
+        st.step = 1;
+        setState(id, st);
+        await send(id, `📋 *REGISTRATION FORM REQUIRED*\n${S}\nBefore verifying your UID, please complete the 6 quick registration steps (Country, Capital, Email, Mobile) so your details can be verified.\n\n📌 *Step 1 of 6 — Region*\n🌍 Where are you from?`, rkGrid(OPTIONS_LIST.q1, 3));
+        return;
+      }
+      st.step = 8;
       setState(id, st);
       await send(id, `🔑 *Enter your YUBIT User ID (UID)*\n${S}\n💡 *Where to find:* Yubit App ➔ Profile\n📌 Must have *$100+ balance* to unlock VIP.\n${S}\n👇 *Send your YUBIT UID below:*`);
       return;
