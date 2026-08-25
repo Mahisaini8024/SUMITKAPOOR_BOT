@@ -564,11 +564,11 @@ bot.setChatMenuButton({
 
 // Set Bot Description (Shown on "What can this bot do?" before Start)
 bot.setMyDescription({
-  description: `🔥 OFFICIAL VIP CHANNEL 🔥\n⚡ OFFICIAL VIP PORTAL ⚡\n\n🏆 $1,000,000 CHALLENGE\n💰 $250,000 ➔ $1,000,000\n\n🎁 EXCLUSIVE VIP PERKS:\n🎯 95%+ Accuracy VIP Signals\n💰 Instant Deposit Bonus\n📈 Daily Volume Rewards\n\n👉 Click 👇 to Register & Join:\n/start — Begin Verification`
+  description: `🔥 OFFICIAL VIP CHANNEL 🔥\n\n🎁 EXCLUSIVE VIP PERKS:\n🎯 80% Accuracy Futures Calls\n💰 20% Instant Deposit Bonus\n📈 $200/Million Volume Bonus\n🤖 Free Bitcoin, Gold & Crypto Indicators\n\n👉 Click 👇 to Register & Join:\n/start — Begin Verification`
 }).catch(() => {});
 
 bot.setMyShortDescription({
-  short_description: `🔥 OFFICIAL VIP CHANNEL — $1M Trading Challenge & VIP Signals`
+  short_description: `🔥 OFFICIAL VIP CHANNEL — 80% Accuracy Futures Calls & VIP Perks`
 }).catch(() => {});
 
 // ─── SEPARATORS / PROGRESS ───────────────────────────────────
