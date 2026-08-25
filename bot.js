@@ -703,10 +703,7 @@ const vUID      = v => /^\d{4,20}$/.test(v.trim());
 
 // ─── MESSAGES ─────────────────────────────────────────────────
 const CAPTIONS = [
-  `✦ *OFFICIAL VIP CHANNEL* ✦\n${S}\n💰 *$1,000,000 CHALLENGE*\n\n📊 Entry ›› $250,000 USDT\n🏆 Target ›› $1,000,000 USDT\n⚡ ROI ›› 4× in 1 Challenge\n${S}\n👋 Hey *{FN}* — let's go!\n${S}\n🔑 *Register via Wise Advice:*\n🟡 *YUBIT:* ${YUBIT_SIGNUP}\n🟢 *WEEX:* ${WEEX_SIGNUP}`,
-  `👑 *MILLION DOLLAR CLUB* 👑\n${S}\n🚀 *WISE ADVICE $1M CHALLENGE*\n\n⚔️  $250K ──► $1M\n🎯  1 Account · 1 Goal\n${S}\n🔥 Welcome *{FN}*!\n${S}\n🔑 *Register via Wise Advice:*\n🟡 *YUBIT:* ${YUBIT_SIGNUP}\n🟢 *WEEX:* ${WEEX_SIGNUP}`,
-  `💎 *ELITE TRADING ARENA* 💎\n${S}\n🏆 *OFFICIAL VIP CHANNEL — $1M*\n\n  💵 Start ›  $250K USDT\n  🎯 Goal  ›  $1M USDT\n  📈 Skill + Discipline\n${S}\n🔥 *{FN}* — are you ready?\n${S}\n🔑 *Register via Wise Advice:*\n🟡 *YUBIT:* ${YUBIT_SIGNUP}\n🟢 *WEEX:* ${WEEX_SIGNUP}`,
-  `🔱 *WISE ADVICE ROYALTY* 🔱\n${S}\n🎯 *$1M TRADING CHALLENGE*\n\n  🏛️ Only Serious Traders\n  📡 Premium Signals\n  💰 Life-Changing Money\n${S}\n✨ Namaste *{FN}* — welcome!\n${S}\n🔑 *Register via Wise Advice:*\n🟡 *YUBIT:* ${YUBIT_SIGNUP}\n🟢 *WEEX:* ${WEEX_SIGNUP}`,
+  `🚨 *JOIN OUR VIP GROUP — 100% FREE!* 🚨\n\nUnlock all these VIP benefits:\n\n📊 *Free Futures Trading Signals*\n💰 *Free Monthly Volume Bonus*\n🎁 *Free Deposit Bonus*\n🤖 *AI-Powered Auto-Trading Indicators*\n${S}\n\n✅ *Only Requirement:* Maintain at least *$100* in your WEEX or YUBIT wallet.\n${S}\n\n🔥 Welcome *{FN}*!\n\n🔑 *Register via Wise Advice:*\n🟡 *YUBIT:* ${YUBIT_SIGNUP}\n🟢 *WEEX:* ${WEEX_SIGNUP}`
 ];
 const INTROS = [
   fn => `🔐 *VIP ACCESS PORTAL*\n${S}\n👋 Salaam *${fn}*!\n\nComplete 6-step verification to unlock the *$1M Group*. All fields are *mandatory*.\n${S}\n📊 Progress: ${progressBar(0)}\n${S}\n📌 *Step 1 of 6 — Region*\n🌍 Where are you from?`,
@@ -1003,7 +1000,8 @@ const rkAdminLogMenu = () => ({
     keyboard: [
       [{ text: '📅 Today Users' }, { text: '📊 All Users' }],
       [{ text: '🔍 Search UID' }, { text: '📢 Broadcast' }],
-      [{ text: '📥 Export' }, { text: '📈 Stats' }, { text: '📋 Approved UIDs' }]
+      [{ text: '📥 Export All Data' }, { text: '📅 Export Today Data' }],
+      [{ text: '📈 Stats' }, { text: '📋 Approved UIDs' }]
     ],
     resize_keyboard: true,
     persistent: true
@@ -1221,8 +1219,8 @@ bot.onText(/\/?(users|📊 All Users)/i, async (msg) => {
   send(chatId, tableText);
 });
 
-// /export — Export all users as CSV file
-bot.onText(/\/?(export|📥 Export)/i, async (msg) => {
+// /export or /exportall or '📥 Export All Data' — Export all users in history as CSV file
+bot.onText(/\/?(export|exportall|📥 Export|📥 Export All Data)/i, async (msg) => {
   const chatId = msg.chat.id;
   const isLog  = logGroupId && String(chatId) === String(logGroupId);
   if (!isAdmin(chatId) && !isLog) return;
@@ -1236,29 +1234,76 @@ bot.onText(/\/?(export|📥 Export)/i, async (msg) => {
     d.firstName || '',
     d.q1 || '',
     d.q2 || '',
-    d.q3 || '',
+    d.q3 || d.exchangeChoice || '',
     d.q4 || '',
-    d.q5 || '',
+    d.q5 || (d.userName ? `@${d.userName}` : ''),
     d.q6 || '',
     d.yubitUID || '',
     d.status || '',
     d.chatId || '',
-    d.completedAt ? new Date(d.completedAt).toLocaleString('en-IN') : ''
+    d.completedAt ? new Date(d.completedAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }) : ''
   ].map(v => `"${String(v).replace(/"/g, '""')}"`).join(','));
 
-  const csv    = [header, ...rows].join('\n');
-  const tmpFile = path.join(__dirname, `export_${Date.now()}.csv`);
+  const csv     = [header, ...rows].join('\n');
+  const tmpFile = path.join(__dirname, `full_database_export_${Date.now()}.csv`);
   fs.writeFileSync(tmpFile, csv, 'utf8');
 
   try {
     await bot.sendDocument(chatId, tmpFile, {
-      caption: `📊 *User Export — ${list.length} Users*\n_Generated: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}_`,
+      caption: `📊 *FULL SHEET EXPORT — ${list.length} Users*\n━━━━━━━━━━━━━━━━━━━━\n📁 *File:* \`Full_Database_Sheet.csv\`\n👥 *Total Registrations:* \`${list.length}\`\n🕒 _Generated: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}_`,
       parse_mode: 'Markdown'
     });
   } finally {
-    fs.unlinkSync(tmpFile);
+    try { fs.unlinkSync(tmpFile); } catch(_) {}
   }
-  console.log(`✅ Exported ${list.length} users to CSV for chatId ${chatId}`);
+  console.log(`✅ Exported ${list.length} all-time users to CSV for chatId ${chatId}`);
+});
+
+// /exporttoday or '📅 Export Today Data' — Export only today's registered users as CSV file
+bot.onText(/\/?(exporttoday|todayexport|📅 Export Today Data)/i, async (msg) => {
+  const chatId = msg.chat.id;
+  const isLog  = logGroupId && String(chatId) === String(logGroupId);
+  if (!isAdmin(chatId) && !isLog) return;
+
+  const u = loadUsers();
+  const todayStr = new Date().toLocaleDateString('en-IN', { timeZone: 'Asia/Kolkata' });
+  const list = Object.values(u).filter(d => {
+    if (!d.completedAt) return false;
+    return new Date(d.completedAt).toLocaleDateString('en-IN', { timeZone: 'Asia/Kolkata' }) === todayStr;
+  });
+
+  if (!list.length) {
+    return send(chatId, `📅 *Today's CSV Export (0 Users)*\n━━━━━━━━━━━━━━━━━━━━\nNo new users registered today (${todayStr}) yet.`);
+  }
+
+  const header = 'Name,Country,Capital,Exchange,Email,Telegram,Mobile,UID,Status,ChatID,Date';
+  const rows = list.map(d => [
+    d.firstName || '',
+    d.q1 || '',
+    d.q2 || '',
+    d.q3 || d.exchangeChoice || '',
+    d.q4 || '',
+    d.q5 || (d.userName ? `@${d.userName}` : ''),
+    d.q6 || '',
+    d.yubitUID || '',
+    d.status || '',
+    d.chatId || '',
+    d.completedAt ? new Date(d.completedAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }) : ''
+  ].map(v => `"${String(v).replace(/"/g, '""')}"`).join(','));
+
+  const csv     = [header, ...rows].join('\n');
+  const tmpFile = path.join(__dirname, `today_export_${Date.now()}.csv`);
+  fs.writeFileSync(tmpFile, csv, 'utf8');
+
+  try {
+    await bot.sendDocument(chatId, tmpFile, {
+      caption: `📅 *1-DAY (TODAY) EXPORT — ${list.length} Users*\n━━━━━━━━━━━━━━━━━━━━\n🗓️ *Date:* \`${todayStr}\`\n📁 *File:* \`Today_Users_Sheet.csv\`\n👥 *Registrations:* \`${list.length}\`\n🕒 _Generated: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}_`,
+      parse_mode: 'Markdown'
+    });
+  } finally {
+    try { fs.unlinkSync(tmpFile); } catch(_) {}
+  }
+  console.log(`✅ Exported ${list.length} today users to CSV for chatId ${chatId}`);
 });
 
 // ─── FILE UPLOAD — Bulk UID Import ────────────────────────────
