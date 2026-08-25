@@ -1000,7 +1000,7 @@ const rkAdminLogMenu = () => ({
     keyboard: [
       [{ text: '📅 Today Users' }, { text: '📊 All Users' }],
       [{ text: '🔍 Search UID' }, { text: '📢 Broadcast' }],
-      [{ text: '📥 Export All Data' }, { text: '📅 Export Today Data' }],
+      [{ text: '📅 Today CSV' }, { text: '📊 All Data CSV' }],
       [{ text: '📈 Stats' }, { text: '📋 Approved UIDs' }]
     ],
     resize_keyboard: true,
@@ -1219,8 +1219,8 @@ bot.onText(/\/?(users|📊 All Users)/i, async (msg) => {
   send(chatId, tableText);
 });
 
-// /export or /exportall or '📥 Export All Data' — Export all users in history as CSV file
-bot.onText(/\/?(export|exportall|📥 Export|📥 Export All Data)/i, async (msg) => {
+// /export or /exportall or '📊 All Data CSV' — Export all users in history as CSV file
+bot.onText(/\/?(export|exportall|📥 Export|📥 Export All Data|📊 All Data CSV|All Data CSV)/i, async (msg) => {
   const chatId = msg.chat.id;
   const isLog  = logGroupId && String(chatId) === String(logGroupId);
   if (!isAdmin(chatId) && !isLog) return;
@@ -1259,8 +1259,8 @@ bot.onText(/\/?(export|exportall|📥 Export|📥 Export All Data)/i, async (msg
   console.log(`✅ Exported ${list.length} all-time users to CSV for chatId ${chatId}`);
 });
 
-// /exporttoday or '📅 Export Today Data' — Export only today's registered users as CSV file
-bot.onText(/\/?(exporttoday|todayexport|📅 Export Today Data)/i, async (msg) => {
+// /exporttoday or '📅 Today CSV' — Export only today's registered users as CSV file
+bot.onText(/\/?(exporttoday|todayexport|📅 Export Today Data|📅 Today CSV|Today CSV)/i, async (msg) => {
   const chatId = msg.chat.id;
   const isLog  = logGroupId && String(chatId) === String(logGroupId);
   if (!isAdmin(chatId) && !isLog) return;
