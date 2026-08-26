@@ -135,14 +135,17 @@ async function verifyUIDViaWeexAPI(uid) {
 
     const depositTotal = parseFloat(assetData.depositTotalAmount || '0');
     const availBalance = parseFloat(assetData.availableBalance || '0');
-    // User qualifies if deposit >= 100 OR available balance >= 100
-    const depositOk = depositTotal >= 100 || availBalance >= 100;
+    const fundingTotal = parseFloat(assetData.fundingTotalUsdt || '0');
+    const spotTotal    = parseFloat(assetData.spotProTotalUsdt || '0');
+    const maxBalance   = Math.max(depositTotal, availBalance, fundingTotal, spotTotal);
+    const depositOk    = maxBalance >= 100;
+    const displayBal   = maxBalance > 0 ? maxBalance.toFixed(2) : '0.00';
 
     return {
       isReferral: true,
       depositOk,
-      deposit: depositTotal.toFixed(2),
-      balance: availBalance.toFixed(2),
+      deposit: displayBal,
+      balance: displayBal,
       error: null
     };
   } catch (err) {
