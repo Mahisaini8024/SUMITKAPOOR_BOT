@@ -363,12 +363,11 @@ bot.setChatMenuButton({
 
 console.log('🤖 Bot v6.5 starting... (VIP Member Left Alert Active)');
 
-// Auto-detect and post Public Server IP to Admin Log Group on boot
+// Auto-detect Public Server IP on boot (console only)
 fetch('https://api.ipify.org?format=json')
   .then(r => r.json())
   .then(d => {
     console.log(`🌐 SERVER PUBLIC IP: ${d.ip}`);
-    sendToLogGroup(`🌐 *SERVER PUBLIC IP:* \`${d.ip}\`\n\n📌 Send this IP to Yubit Team (@YUBIT_BEN / @YUBIT_CS03) to whitelist Yubit API!`);
   })
   .catch(e => console.error('⚠️ Could not fetch public IP:', e.message));
 
