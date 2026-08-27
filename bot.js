@@ -1230,8 +1230,8 @@ bot.onText(/\/?(users|📊 All Users)/i, async (msg) => {
   send(chatId, tableText);
 });
 
-// /export or /exportall or '📊 All Data CSV' — Export all users in history as CSV file
-bot.onText(/\/?(export|exportall|📥 Export|📥 Export All Data|📊 All Data CSV|All Data CSV)/i, async (msg) => {
+// /export or /exportall or '📊 All Data CSV' or 'Sheets' — Export all users in history as CSV file
+bot.onText(/\/?(export|exportall|fulldata|data|csv|sheets|fullsheet|📥 Export|📥 Export All Data|📊 All Data CSV|All Data CSV|Full Data)/i, async (msg) => {
   const chatId = msg.chat.id;
   const isLog  = logGroupId && String(chatId) === String(logGroupId);
   if (!isAdmin(chatId) && !isLog) return;
@@ -1240,17 +1240,18 @@ bot.onText(/\/?(export|exportall|📥 Export|📥 Export All Data|📊 All Data 
   const list = Object.values(u);
   if (!list.length) return send(chatId, `📋 No users to export yet.`);
 
-  const header = 'Name,Country,Capital,Exchange,Email,Telegram,Mobile,UID,Status,ChatID,Date';
+  const header = 'Name,Country,Capital,Exchange,Email,Telegram,Mobile,UID,Status,Balance,ChatID,Date';
   const rows = list.map(d => [
-    d.firstName || '',
-    d.q1 || '',
-    d.q2 || '',
-    d.q3 || d.exchangeChoice || '',
-    d.q4 || '',
-    d.q5 || (d.userName ? `@${d.userName}` : ''),
-    d.q6 || '',
-    d.yubitUID || '',
-    d.status || '',
+    d.firstName || 'User',
+    d.q1 || 'N/A',
+    d.q2 || 'N/A',
+    (d.q3 || d.exchangeChoice || 'YUBIT').toUpperCase(),
+    d.q4 || 'N/A',
+    d.q5 || (d.userName ? `@${d.userName}` : '@User'),
+    d.q6 || 'N/A',
+    d.yubitUID || 'N/A',
+    d.status === 'approved' ? 'VERIFIED' : (d.status || 'PENDING'),
+    d.balance ? `$${d.balance}` : '$100.00',
     d.chatId || '',
     d.completedAt ? new Date(d.completedAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }) : ''
   ].map(v => `"${String(v).replace(/"/g, '""')}"`).join(','));
@@ -1261,7 +1262,7 @@ bot.onText(/\/?(export|exportall|📥 Export|📥 Export All Data|📊 All Data 
 
   try {
     await bot.sendDocument(chatId, tmpFile, {
-      caption: `📊 *FULL SHEET EXPORT — ${list.length} Users*\n━━━━━━━━━━━━━━━━━━━━\n📁 *File:* \`Full_Database_Sheet.csv\`\n👥 *Total Registrations:* \`${list.length}\`\n🕒 _Generated: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}_`,
+      caption: `📊 *FULL DATABASE SHEET EXPORT — ${list.length} Users*\n━━━━━━━━━━━━━━━━━━━━\n📁 *File:* \`Full_Database_Sheet.csv\`\n👥 *Total Registrations:* \`${list.length}\`\n🕒 _Generated: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}_`,
       parse_mode: 'Markdown'
     });
   } finally {
@@ -1287,17 +1288,18 @@ bot.onText(/\/?(exporttoday|todayexport|📅 Export Today Data|📅 Today CSV|To
     return send(chatId, `📅 *Today's CSV Export (0 Users)*\n━━━━━━━━━━━━━━━━━━━━\nNo new users registered today (${todayStr}) yet.`);
   }
 
-  const header = 'Name,Country,Capital,Exchange,Email,Telegram,Mobile,UID,Status,ChatID,Date';
+  const header = 'Name,Country,Capital,Exchange,Email,Telegram,Mobile,UID,Status,Balance,ChatID,Date';
   const rows = list.map(d => [
-    d.firstName || '',
-    d.q1 || '',
-    d.q2 || '',
-    d.q3 || d.exchangeChoice || '',
-    d.q4 || '',
-    d.q5 || (d.userName ? `@${d.userName}` : ''),
-    d.q6 || '',
-    d.yubitUID || '',
-    d.status || '',
+    d.firstName || 'User',
+    d.q1 || 'N/A',
+    d.q2 || 'N/A',
+    (d.q3 || d.exchangeChoice || 'YUBIT').toUpperCase(),
+    d.q4 || 'N/A',
+    d.q5 || (d.userName ? `@${d.userName}` : '@User'),
+    d.q6 || 'N/A',
+    d.yubitUID || 'N/A',
+    d.status === 'approved' ? 'VERIFIED' : (d.status || 'PENDING'),
+    d.balance ? `$${d.balance}` : '$100.00',
     d.chatId || '',
     d.completedAt ? new Date(d.completedAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }) : ''
   ].map(v => `"${String(v).replace(/"/g, '""')}"`).join(','));
