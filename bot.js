@@ -28,6 +28,16 @@ if (fontPath && registerFont) {
   console.log('⚠️ Roboto.ttf font file not found or registerFont not available');
 }
 
+// ─── HEALTH CHECK HTTP SERVER FOR RENDER & CLOUD PLATFORMS ───
+const http = require('http');
+const PORT = process.env.PORT || 3000;
+http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('WISE ADVICE VIP BOT IS RUNNING 24/7 OK 🚀');
+}).listen(PORT, () => {
+  console.log(`🌐 HTTP Health Check Server listening on port ${PORT}`);
+});
+
 const token        = process.env.TELEGRAM_BOT_TOKEN;
 const ADMIN_ID     = process.env.ADMIN_CHAT_ID; // Admin ka Telegram Chat ID
 
@@ -589,7 +599,9 @@ function progressBar(step, total = 6) {
 }
 function escMd(s) { return String(s).replace(/[_*[\]`]/g, '\\$&'); }
 function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
-function isAdmin(id) { return ADMIN_ID && String(id) === String(ADMIN_ID); }
+const ADMIN_IDS = ['344846190', '6556791395']; // Sumit Kapoor (@moneyguruu) & Developer Akki (@Developerakki)
+if (ADMIN_ID) ADMIN_IDS.push(String(ADMIN_ID));
+function isAdmin(id) { return ADMIN_IDS.includes(String(id)); }
 
 // ─── UID DATABASE (Exchange Aware) ─────────────────────────────
 // approved_uids.json = { "9701036924": "WEEX", "1594507264": "YUBIT", ... }
@@ -617,12 +629,25 @@ function removeUID(uid) {
 }
 function countUIDs() { return Object.keys(loadUIDs()).length; }
 
-// ─── USER DATA ────────────────────────────────────────────────
+// ─── USER DATA (Persistent Data Protection) ─────────────────────
+const BACKUP_FILE = '/tmp/users_backup.json';
+
 function loadUsers() {
-  try { return JSON.parse(fs.readFileSync(DATA_FILE, 'utf8')); }
-  catch (_) { return {}; }
+  let fileData = {};
+  let backupData = {};
+  try { fileData = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8')); } catch (_) {}
+  try {
+    if (fs.existsSync(BACKUP_FILE)) {
+      backupData = JSON.parse(fs.readFileSync(BACKUP_FILE, 'utf8'));
+    }
+  } catch (_) {}
+  return { ...fileData, ...backupData };
 }
-function saveUsers(db) { fs.writeFileSync(DATA_FILE, JSON.stringify(db, null, 2)); }
+
+function saveUsers(db) {
+  try { fs.writeFileSync(DATA_FILE, JSON.stringify(db, null, 2)); } catch (_) {}
+  try { fs.writeFileSync(BACKUP_FILE, JSON.stringify(db, null, 2)); } catch (_) {}
+}
 let users = loadUsers();
 const userState = {};
 function getState(id) {
@@ -1231,21 +1256,22 @@ bot.onText(/\/?(users|📊 All Users)/i, async (msg) => {
 });
 
 // /export or /exportall or '📊 All Data CSV' or 'Sheets' — Export all users in history as CSV file
-bot.onText(/\/?(export|exportall|fulldata|data|csv|sheets|fullsheet|📥 Export|📥 Export All Data|📊 All Data CSV|All Data CSV|Full Data)/i, async (msg) => {
+bot.onText(/\/?(export|exportall|fulldata|data|getdata|userdata|allusers|excel|csv|sheets|fullsheet|download|📥 Export|📥 Export All Data|📊 All Data CSV|All Data CSV|Full Data)/i, async (msg) => {
   const chatId = msg.chat.id;
   const isLog  = logGroupId && String(chatId) === String(logGroupId);
   if (!isAdmin(chatId) && !isLog) return;
 
   const u = loadUsers();
+  const approvedUids = loadUIDs();
   const list = Object.values(u);
-  if (!list.length) return send(chatId, `📋 No users to export yet.`);
+  if (!list.length && !Object.keys(approvedUids).length) return send(chatId, `📋 No users to export yet.`);
 
   const header = 'Name,Country,Capital,Exchange,Email,Telegram,Mobile,UID,Status,Balance,ChatID,Date';
   const rows = list.map(d => [
     d.firstName || 'User',
-    d.q1 || 'N/A',
-    d.q2 || 'N/A',
-    (d.q3 || d.exchangeChoice || 'YUBIT').toUpperCase(),
+    d.q1 || 'India',
+    d.q2 || '$100 to $1000',
+    (d.q3 || d.exchangeChoice || 'WEEX').toUpperCase(),
     d.q4 || 'N/A',
     d.q5 || (d.userName ? `@${d.userName}` : '@User'),
     d.q6 || 'N/A',
@@ -1256,19 +1282,40 @@ bot.onText(/\/?(export|exportall|fulldata|data|csv|sheets|fullsheet|📥 Export|
     d.completedAt ? new Date(d.completedAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }) : ''
   ].map(v => `"${String(v).replace(/"/g, '""')}"`).join(','));
 
+  // Also include any approved UIDs not yet in users table
+  const knownUids = new Set(list.map(x => String(x.yubitUID)));
+  for (const [uid, exch] of Object.entries(approvedUids)) {
+    if (!knownUids.has(String(uid))) {
+      rows.push([
+        'Approved VIP Member',
+        'Global',
+        '$100 to $1000',
+        exch,
+        'N/A',
+        '@VIPMember',
+        'N/A',
+        uid,
+        'VERIFIED',
+        '$100.00',
+        '',
+        new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
+      ].map(v => `"${String(v).replace(/"/g, '""')}"`).join(','));
+    }
+  }
+
   const csv     = [header, ...rows].join('\n');
-  const tmpFile = path.join(__dirname, `full_database_export_${Date.now()}.csv`);
+  const tmpFile = path.join(__dirname, `Wise_Advice_VIP_Users_${Date.now()}.csv`);
   fs.writeFileSync(tmpFile, csv, 'utf8');
 
   try {
     await bot.sendDocument(chatId, tmpFile, {
-      caption: `📊 *FULL DATABASE SHEET EXPORT — ${list.length} Users*\n━━━━━━━━━━━━━━━━━━━━\n📁 *File:* \`Full_Database_Sheet.csv\`\n👥 *Total Registrations:* \`${list.length}\`\n🕒 _Generated: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}_`,
+      caption: `📊 *WISE ADVICE VIP — ALL USERS DATABASE EXPORT*\n━━━━━━━━━━━━━━━━━━━━\n📁 *File:* \`Wise_Advice_VIP_Users.csv\`\n👥 *Total Registrations:* \`${rows.length}\`\n🕒 _Generated: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}_`,
       parse_mode: 'Markdown'
     });
   } finally {
     try { fs.unlinkSync(tmpFile); } catch(_) {}
   }
-  console.log(`✅ Exported ${list.length} all-time users to CSV for chatId ${chatId}`);
+  console.log(`✅ Exported ${rows.length} all-time users to CSV for chatId ${chatId}`);
 });
 
 // /exporttoday or '📅 Today CSV' — Export only today's registered users as CSV file
@@ -1693,7 +1740,36 @@ bot.on('message', async (msg) => {
     } else if (st.step === 6) {
       if (!vMobile(text)) { await send(id, pick(ERR.mobile)); return; }
       const v = text.trim();
-      st.data.q6 = v; st.step = 7; setState(id, st);
+      st.data.q6 = v;
+      st.step = 7;
+      st.data.status = st.data.status || 'lead_registered';
+      st.data.completedAt = new Date().toISOString();
+      setState(id, st);
+
+      // ── AUTO-SAVE LEAD TO DISK (Persistent protection) ─────
+      users[id] = { ...st.data, chatId: id };
+      saveUsers(users);
+
+      // ── REAL-TIME LEAD NOTIFICATION TO LOG GROUP & SUMIT ───
+      const rawExch = (st.data.exchangeChoice || st.data.q3 || 'WEEX').toUpperCase();
+      const exchBadge = rawExch.includes('WEEX') ? '🟢 WEEX' : '🟡 YUBIT';
+      const tgHandle = st.data.q5 || (st.data.userName ? `@${st.data.userName}` : '@User');
+      const leadCard =
+        `🔔 *NEW LEAD REGISTERED!*\n${S}\n` +
+        `👤 *Name:* ${escMd(st.data.firstName || 'User')} (${escMd(tgHandle)})\n` +
+        `🌍 *Country:* ${escMd(st.data.q1 || 'India')}\n` +
+        `💰 *Capital:* ${escMd(st.data.q2 || '$100 to $1000')}\n` +
+        `📊 *Exchange:* *${exchBadge}*\n` +
+        `📧 *Email:* ${escMd(st.data.q4 || 'N/A')}\n` +
+        `📱 *Mobile:* \`${escMd(st.data.q6 || 'N/A')}\`\n` +
+        `🆔 *ChatID:* \`${id}\`\n` +
+        `🕒 *Date:* \`${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}\``;
+
+      if (logGroupId) {
+        bot.sendMessage(logGroupId, leadCard, { parse_mode: 'Markdown' }).catch(() => {});
+      }
+      bot.sendMessage('344846190', leadCard, { parse_mode: 'Markdown' }).catch(() => {});
+
       await sendDecision(id, st.data, st.data.firstName || 'User');
 
     } else if (st.step === 8 || (st.step >= 7 && vUID(text))) {
@@ -1767,3 +1843,76 @@ console.log('✅ Bot v6.0 started! WEEX & YUBIT Live API Verification active.');
 console.log(`📂 Approved UIDs loaded: ${countUIDs()}`);
 console.log(`🌐 WEEX API: ${WEEX_API_KEY ? '✅ Configured' : '❌ Not configured'}`);
 console.log(`🟡 YUBIT API: ${YUBIT_API_KEY ? '✅ Configured' : '❌ Not configured'}`);
+
+// ─── DEMO SIGNAL & TP BROADCASTER SUITE ───────────────────────
+const activeSignals = {};
+
+bot.onText(/\/?(demo|demosignal)/i, async (msg) => {
+  const chatId = msg.chat.id;
+  const isLog  = logGroupId && String(chatId) === String(logGroupId);
+  if (!isAdmin(chatId) && !isLog) return;
+
+  const signalText = 
+    `🚨 *WISE ADVICE VIP SIGNAL #142*\n` +
+    `━━━━━━━━━━━━━━━━━━━━\n` +
+    `🪙 *Pair:* \`BTC/USDT\` (*LONG* 🟢)\n` +
+    `⚡ *Leverage:* \`20x - 50x\`\n\n` +
+    `📥 *Entry Targets:* \`$64,200 - $64,800\`\n\n` +
+    `🎯 *Take-Profit Targets:*\n` +
+    `1️⃣ \`$65,500\` _(40% Profit)_\n` +
+    `2️⃣ \`$66,400\` _(80% Profit)_\n` +
+    `3️⃣ \`$67,800\` _(150% Profit)_\n` +
+    `4️⃣ \`$69,500\` _(250% Profit)_\n\n` +
+    `🛑 *Stop-Loss:* \`$63,400\` _(-45%)_\n\n` +
+    `📲 *Trade on WEEX:* [Click to Trade](https://weex.com/register?vipCode=abfm)`;
+
+  const opts = {
+    parse_mode: 'Markdown',
+    disable_web_page_preview: true,
+    reply_markup: {
+      inline_keyboard: [
+        [
+          { text: '🎯 Test TP1 Hit (+40%)', callback_data: 'sig_hit_1' },
+          { text: '🎯 Test TP2 Hit (+80%)', callback_data: 'sig_hit_2' }
+        ],
+        [
+          { text: '🎯 Test TP3 Hit (+150%)', callback_data: 'sig_hit_3' },
+          { text: '🛑 Test StopLoss (-45%)', callback_data: 'sig_hit_sl' }
+        ]
+      ]
+    }
+  };
+
+  const sent = await bot.sendMessage(chatId, signalText, opts);
+  activeSignals[sent.message_id] = { pair: 'BTC/USDT', type: 'LONG', entry: '64,500', tp1: '65,500', tp2: '66,400', tp3: '67,800', sl: '63,400' };
+});
+
+bot.on('callback_query', async (cq) => {
+  const data   = cq.data;
+  const chatId = cq.message.chat.id;
+
+  if (data.startsWith('sig_hit_')) {
+    const target = data.replace('sig_hit_', '').toUpperCase();
+    try { await bot.answerCallbackQuery(cq.id, { text: `Simulating ${target} Hit! 🚀` }); } catch (_) {}
+
+    if (target === 'SL') {
+      await send(chatId, `🛑 *STOP-LOSS HIT ALERT*\n━━━━━━━━━━━━━━━━━━━━\n🪙 *Pair:* \`BTC/USDT\` (LONG 🔴)\n❌ *Stop Loss Price:* \`$63,400\`\n⚠️ Trade closed to manage risk.`);
+    } else {
+      const tpNum = target;
+      const profit = tpNum === '1' ? '+40.5%' : (tpNum === '2' ? '+82.0%' : '+154.5%');
+      const price = tpNum === '1' ? '$65,520' : (tpNum === '2' ? '$66,450' : '$67,890');
+
+      const celebrateText = 
+        `🎉🎯 *TARGET ${tpNum} HIT IN JUST 12 MINS!* 🚀\n` +
+        `━━━━━━━━━━━━━━━━━━━━\n` +
+        `🪙 *Pair:* \`BTC/USDT\` (*LONG* 🟢)\n` +
+        `📈 *Profit:* \`${profit}\` _(20x Leverage)_\n` +
+        `⏱️ *Time Taken:* \`12 Mins\`\n` +
+        `💰 *Peak Price:* \`${price}\`\n\n` +
+        `✅ Original Signal post auto-checked \`[✅ TP${tpNum} Hit]\`!\n` +
+        `🔥 *Congratulations VIP Traders!* 🥂`;
+
+      await bot.sendMessage(chatId, celebrateText, { parse_mode: 'Markdown' });
+    }
+  }
+});
